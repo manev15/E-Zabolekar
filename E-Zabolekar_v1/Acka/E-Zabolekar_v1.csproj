@@ -173,6 +173,7 @@
     <Content Include="images\pinlayer2.png" />
     <Content Include="images\slika.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="LoginAdmin.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="MojProfil.aspx" />
     <Content Include="News.aspx" />
@@ -348,6 +349,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
