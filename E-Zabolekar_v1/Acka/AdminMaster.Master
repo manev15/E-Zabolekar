@@ -78,7 +78,7 @@
          <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li id="" ><a  href="DefaultAdmin.aspx">Почетна</a></li>
-                <li id="" ><a  href="DefaultAdmin.aspx">Мои термини</a></li>
+                <li id="" ><a  href="MoiTerminiAdmin.aspx">Мои термини</a></li>
                 <li><a href="#">Завршени прегледи</a></li>
                 <li><a href="#">Нешто</a></li>
                

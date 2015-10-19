@@ -175,6 +175,7 @@
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="MoiTerminiAdmin.aspx" />
     <Content Include="MojProfil.aspx" />
     <Content Include="News.aspx" />
     <Content Include="packages.config" />
@@ -367,6 +368,13 @@
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="MoiTerminiAdmin.aspx.cs">
+      <DependentUpon>MoiTerminiAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoiTerminiAdmin.aspx.designer.cs">
+      <DependentUpon>MoiTerminiAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MojProfil.aspx.cs">
       <DependentUpon>MojProfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

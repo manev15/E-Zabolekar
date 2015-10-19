@@ -33,6 +33,12 @@
                     </tr>
                     <tr>
                         <td>
+                           </br>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <div class="container">
                                 <!-- Trigger the modal with a button -->
                                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Избери датум</button>
