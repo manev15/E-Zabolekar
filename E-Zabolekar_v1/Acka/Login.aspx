@@ -216,6 +216,7 @@
                                         <div class="form-group">
                                             <asp:TextBox ID="txtPassword" class="form-control" placeholder="Password" name="password" type="password" value="" runat="server"></asp:TextBox>
                                         </div>
+                                        <asp:CheckBox ID="isKorisnik" runat="server" Text="Корисник" />
                                         <asp:Button ID="btnLogIn" runat="server" class="btn btn-lg btn-success btn-block" Text="Login" OnClick="btnLogIn_Click" />
                                         <!--OnClick="btnLogIn_Click"-->
 
@@ -223,7 +224,10 @@
                                         <div style="padding-top: 20px" role="form">
                                             <hr class="colorgraph">
                                             <div class="form-group">
-                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="FirstName Last Name" ID="txtFirstName" runat="server"></asp:TextBox>
+                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="First Name" ID="txtFirstName" runat="server"></asp:TextBox>
+                                            </div>
+                                            <div class="form-group">
+                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="Last Name" ID="txtLastName" runat="server"></asp:TextBox>
                                             </div>
                                             <div class="form-group">
                                                 <asp:TextBox TabIndex="1" class="form-control" placeholder="Username" ID="txtUsernam" runat="server"></asp:TextBox>

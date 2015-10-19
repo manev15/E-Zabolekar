@@ -14,7 +14,10 @@ namespace Acka
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                isKorisnik.Checked = true;
+            }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -25,7 +28,8 @@ namespace Acka
             komanda.Connection = konekcija;
             komanda.CommandText = "INSERT INTO Korisnik (ime_prezime, user_name, password,is_admin,telefon,lokacija)" +
                 "VALUES(@ime_prezime, @user_name, @password,@is_admin,@telefon,@lokacija) ";
-            komanda.Parameters.AddWithValue("@ime_prezime", txtFirstName.Text);
+            string imeprezime = txtFirstName.Text + " " + txtLastName.Text;
+            komanda.Parameters.AddWithValue("@ime_prezime", imeprezime);
             komanda.Parameters.AddWithValue("@user_name", txtUsernam.Text);
             komanda.Parameters.AddWithValue("@password", txtPasswordd.Text);
             komanda.Parameters.AddWithValue("@is_admin", "0");
@@ -68,80 +72,163 @@ namespace Acka
 
         protected void btnLogIn_Click(object sender, EventArgs e)
         {
-            SqlConnection konekcija = new SqlConnection();
-            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT  COUNT(user_name)as broj FROM Korisnik WHERE user_name=@username AND password=@password";
-            string sqlString1 = "SELECT is_admin FROM Korisnik WHERE user_name=@username AND password=@password";
-
-
-
-            SqlCommand komanda = new SqlCommand(sqlString, konekcija);
-            komanda.Parameters.AddWithValue("@username", txtUserName.Text);
-            komanda.Parameters.AddWithValue("@password", txtPassword.Text);
-            SqlDataAdapter adapter = new SqlDataAdapter(komanda);
-            DataSet ds = new DataSet();
-            SqlCommand komanda1 = new SqlCommand(sqlString1, konekcija);
-            komanda1.Parameters.AddWithValue("@username", txtUserName.Text);
-            komanda1.Parameters.AddWithValue("@password", txtPassword.Text);
-            SqlDataAdapter adapter1 = new SqlDataAdapter(komanda1);
-            DataSet ds1 = new DataSet();
-
-            try
+            if (isKorisnik.Checked)
             {
-                konekcija.Open();
-                adapter.Fill(ds, "Korisnici");
-                adapter1.Fill(ds1, "Korisnici");
-                //GridView1.DataSource = ds;
-                //GridView1.DataBind();
-                //    lblPoraka.Text = ds.Tables[0].Rows[0]["broj"].ToString();
-                int admin = Convert.ToInt32(ds1.Tables[0].Rows[0]["is_admin"].ToString());
-                int br = Convert.ToInt32(ds.Tables[0].Rows[0]["broj"].ToString());
+
+                SqlConnection konekcija = new SqlConnection();
+                konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
+                string sqlString = "SELECT  COUNT(user_name)as broj FROM Korisnik WHERE user_name=@username AND password=@password";
+                string sqlString1 = "SELECT is_admin FROM Korisnik WHERE user_name=@username AND password=@password";
 
 
-                if (br > 0)
+
+                SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+                komanda.Parameters.AddWithValue("@username", txtUserName.Text);
+                komanda.Parameters.AddWithValue("@password", txtPassword.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+                DataSet ds = new DataSet();
+                SqlCommand komanda1 = new SqlCommand(sqlString1, konekcija);
+                komanda1.Parameters.AddWithValue("@username", txtUserName.Text);
+                komanda1.Parameters.AddWithValue("@password", txtPassword.Text);
+                SqlDataAdapter adapter1 = new SqlDataAdapter(komanda1);
+                DataSet ds1 = new DataSet();
+
+                try
                 {
+                    konekcija.Open();
+                    adapter.Fill(ds, "Korisnici");
+                    adapter1.Fill(ds1, "Korisnici");
+                    //GridView1.DataSource = ds;
+                    //GridView1.DataBind();
+                    //    lblPoraka.Text = ds.Tables[0].Rows[0]["broj"].ToString();
+                    int admin = Convert.ToInt32(ds1.Tables[0].Rows[0]["is_admin"].ToString());
+                    int br = Convert.ToInt32(ds.Tables[0].Rows[0]["broj"].ToString());
 
 
-                    string korisnik;
-                    if (Session["korisnik"] == null)
+                    if (br > 0)
                     {
-                        korisnik = "";
+
+
+                        string korisnik;
+                        if (Session["korisnik"] == null)
+                        {
+                            korisnik = "";
+                        }
+                        else
+                        {
+                            korisnik = (string)Session["korisnik"];
+
+                        }
+                        korisnik = txtUserName.Text;
+
+                        Session["korisnik"] = korisnik;
+
+
+                        if (admin == 0)
+                        {
+                            Response.Redirect("Default.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("Defaultadmin.aspx");
+                        }
+
                     }
                     else
                     {
-                        korisnik = (string)Session["korisnik"];
-
+                        Response.Redirect("About.aspx");
                     }
-                    korisnik = txtUserName.Text;
 
-                    Session["korisnik"] = korisnik;
+                    ViewState["dataset"] = ds;
+                }
+                catch (Exception err)
+                {
+
+                }
+                finally
+                {
+                    konekcija.Close();
+                }
+
+            }
+            else {
+                SqlConnection konekcija = new SqlConnection();
+                konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
+                string sqlString = "SELECT  COUNT(user_name)as broj FROM Zabolekarr WHERE user_name=@username AND password=@password";
+                string sqlString1 = "SELECT is_admin FROM Zabolekarr WHERE user_name=@username AND password=@password";
 
 
-                    if (admin == 0)
+
+                SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+                komanda.Parameters.AddWithValue("@username", txtUserName.Text);
+                komanda.Parameters.AddWithValue("@password", txtPassword.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+                DataSet ds = new DataSet();
+                SqlCommand komanda1 = new SqlCommand(sqlString1, konekcija);
+                komanda1.Parameters.AddWithValue("@username", txtUserName.Text);
+                komanda1.Parameters.AddWithValue("@password", txtPassword.Text);
+                SqlDataAdapter adapter1 = new SqlDataAdapter(komanda1);
+                DataSet ds1 = new DataSet();
+
+                try
+                {
+                    konekcija.Open();
+                    adapter.Fill(ds, "Zabolekarr");
+                    adapter1.Fill(ds1, "Zabolekarr");
+                    //GridView1.DataSource = ds;
+                    //GridView1.DataBind();
+                    //    lblPoraka.Text = ds.Tables[0].Rows[0]["broj"].ToString();
+                    int admin = Convert.ToInt32(ds1.Tables[0].Rows[0]["is_admin"].ToString());
+                    int br = Convert.ToInt32(ds.Tables[0].Rows[0]["broj"].ToString());
+
+
+                    if (br > 0)
                     {
-                        Response.Redirect("Default.aspx");
+
+
+                        string korisnik;
+                        if (Session["korisnik"] == null)
+                        {
+                            korisnik = "";
+                        }
+                        else
+                        {
+                            korisnik = (string)Session["korisnik"];
+
+                        }
+                        korisnik = txtUserName.Text;
+
+                        Session["korisnik"] = korisnik;
+
+
+                        if (admin == 1)
+                        {
+                            Response.Redirect("Defaultadmin.aspx");
+                        }
+
+
                     }
                     else
                     {
-                        Response.Redirect("Defaultadmin.aspx");
+                        Response.Redirect("About.aspx");
                     }
 
+                    ViewState["dataset"] = ds;
                 }
-                else
+                catch (Exception err)
                 {
-                    Response.Redirect("About.aspx");
+
                 }
+                finally
+                {
+                    konekcija.Close();
+                }
+            
+            
+            
+            }
 
-                ViewState["dataset"] = ds;
-            }
-            catch (Exception err)
-            {
-
-            }
-            finally
-            {
-                konekcija.Close();
-            }
         }
+
     }
 }

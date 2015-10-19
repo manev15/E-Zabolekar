@@ -113,7 +113,7 @@ namespace Acka
 
                 if (proverkaTermin())
                 {
-                    lblporaka.Text = "zafatano";
+                    lblporaka.Text = "Терминот е зафатен, одберете друг термин!!";
                 }
                 else
                 {

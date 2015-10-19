@@ -1,4 +1,4 @@
-﻿<%@ Page Title="ZakaziPregled" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ZakaziPregled.aspx.cs" Inherits="Acka.ZakaziPregled" %>
+﻿<%@ Page Title="Закажи преглед" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ZakaziPregled.aspx.cs" Inherits="Acka.ZakaziPregled" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

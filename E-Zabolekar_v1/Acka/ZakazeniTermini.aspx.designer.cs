@@ -10,15 +10,24 @@
 namespace Acka {
     
     
-    public partial class MojProfil {
+    public partial class ZakazeniTermini {
         
         /// <summary>
-        /// UserInfoemation control.
+        /// poraka control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder UserInfoemation;
+        protected global::System.Web.UI.WebControls.Label poraka;
+        
+        /// <summary>
+        /// zakazanitermini control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder zakazanitermini;
     }
 }

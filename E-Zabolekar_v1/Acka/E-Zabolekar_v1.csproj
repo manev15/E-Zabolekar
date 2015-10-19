@@ -183,11 +183,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="ZakazeniTermini.aspx" />
     <Content Include="ZakaziPregled.aspx" />
     <Content Include="AdminMaster.Master" />
     <Content Include="zapregled.aspx" />
     <Content Include="zaprofil.aspx" />
     <Content Include="less\datepicker.less" />
+    <Content Include="zazakazenipregledi.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\agency.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -402,6 +404,13 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ZakazeniTermini.aspx.cs">
+      <DependentUpon>ZakazeniTermini.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZakazeniTermini.aspx.designer.cs">
+      <DependentUpon>ZakazeniTermini.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ZakaziPregled.aspx.cs">
       <DependentUpon>ZakaziPregled.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -422,6 +431,13 @@
     </Compile>
     <Compile Include="zaprofil.aspx.designer.cs">
       <DependentUpon>zaprofil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="zazakazenipregledi.aspx.cs">
+      <DependentUpon>zazakazenipregledi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zazakazenipregledi.aspx.designer.cs">
+      <DependentUpon>zazakazenipregledi.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

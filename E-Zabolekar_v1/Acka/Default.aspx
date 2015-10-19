@@ -79,20 +79,20 @@
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">Најнови новости</h3>
                     </div>
                     <div class="panel-body">
-                        Panel content
+                        Владимир Путин ке присуствува на овогодинепната ракијада во Валандово!!!!
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="panel panel-default">9
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">Никола Груевски :)</h3>
                     </div>
                     <div class="panel-body">
-                        Panel content
+                        охохохохохохо
                     </div>
                 </div>
             </div>
