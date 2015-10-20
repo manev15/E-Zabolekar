@@ -17,7 +17,7 @@ namespace Acka
         private string datum;
         private string od;
         private string dot;
-        private int zabolekar_id;
+        private int zabolekar_id,termin_id;
         private int korisnikid;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace Acka
         {
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT * FROM Termin where zabolekar_id='" + zabolekar_id + "'";
+            string sqlString = "SELECT * FROM Termin where zabolekar_id='" + zabolekar_id + "'"+"order by datum asc";
             SqlCommand komanda = new SqlCommand(sqlString, konekcija);
             SqlDataAdapter adapter = new SqlDataAdapter(komanda);
             DataSet ds = new DataSet();
@@ -74,11 +74,14 @@ namespace Acka
                     {
                         poraka.Text = "";
                         datum = row["datum"].ToString();
+                        termin_id = Convert.ToInt32(row["termin_id"].ToString());
                         od = row["od"].ToString();
                         dot = row["do"].ToString();
                         korisnikid = Convert.ToInt32(row["korisnik_id"].ToString());
                         string[] data = datum.Split(' ');
-                        html = html + "<div class='list-group'><button type='button' class='list-group-item' style='width:550px' data-toggle='modal' data-target='#myModal'>" + "<b>Датум: </b>" + data[0] + "  " + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Термин:</b> " + od + "-" + dot + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Пациент:</b> " + getPacientName(korisnikid) + "</button></div>";
+
+
+                        html = html + "<div class='list-group'><button  onclick='najdi("+termin_id+","+korisnikid+","+zabolekar_id+")'  type='button' class='list-group-item' style='width:550px' data-toggle='modal' data-target='#myModal'>" + "<b>Датум: </b>" + data[0] + "  " + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Термин:</b> " + od + "-" + dot + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Пациент:</b> " + getPacientName(korisnikid) + "</button></div>";
                     }
                 }
 
@@ -151,6 +154,12 @@ namespace Acka
             }
             return rez;
         }
+
+        protected void zavrsiPregled_click(object sender, EventArgs e)
+        {
+            Response.Redirect("MoiTerminiAdmin.aspx");
+        }
+
 
 
 

@@ -2,6 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <style>
         .carousel-control.left, .carousel-control.right {
             background-image: none;
@@ -75,24 +78,40 @@
     <br />
 
     <div class="container">
+        <p style="font-size: 50px">ДОБРЕДОЈДОВТЕ</p>
+        
+        <p style="font-size: 20px">Нашите заболекари ке се погрижат за вашите расипани заби :)</p>
+    </div>
+
+    <br />
+    <br />
+    <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Најнови новости</h3>
+                        <h3 class="panel-title">Последни новости</h3>
                     </div>
-                    <div class="panel-body">
-                        Владимир Путин ке присуствува на овогодинепната ракијада во Валандово!!!!
-                    </div>
+                    
+                        
+                        <div class="list-group">
+                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>Владимир Путин во посета на Валандово!!!!</button>
+                         
+                             <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>Александар Манев шампион на овогодинешната ракијада</button>
+                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>И тако даље</button>
+                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>И тако даље</button>
+                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>И тако даље</button>
+                        </div>
+                    
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Никола Груевски :)</h3>
+                        <h3 class="panel-title">Анкети</h3>
                     </div>
                     <div class="panel-body">
-                        охохохохохохо
+                        Нема активни анкети моментално.
                     </div>
                 </div>
             </div>
@@ -101,7 +120,7 @@
     </div>
 
 
-    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" ViewStateMode="Enabled" Visible="False">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -114,9 +133,7 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <br />
-    <br />
-    <br />
+    
     <%-- <asp:Button ID="Button1" runat="server" Text="Logout momentalen" OnClick="logout" />--%>
     <asp:Label ID="lblPoraka" runat="server" Text=" "></asp:Label>
     <br />

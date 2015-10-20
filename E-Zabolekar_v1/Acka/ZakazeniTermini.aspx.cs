@@ -45,7 +45,7 @@ namespace Acka
         {
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT * FROM Termin where korisnik_id='" + korisnik_id + "'";
+            string sqlString = "SELECT * FROM Termin where korisnik_id='" + korisnik_id + "'"+"order by datum asc";
             SqlCommand komanda = new SqlCommand(sqlString, konekcija);
             SqlDataAdapter adapter = new SqlDataAdapter(komanda);
             DataSet ds = new DataSet();
