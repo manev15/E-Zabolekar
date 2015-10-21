@@ -2,12 +2,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script>
         function najdi(terminid,korisnikid,zaboekar_id) {
-          
-            document.getElementById("ace").innerHTML = terminid;
+            var kkk = korisnikid;
+            document.getElementById("ace").innerHTML = "";
             document.getElementById('<%= pregledid.ClientID %>').innerHTML = terminid;
-            document.getElementById('<%= korisnikid.ClientID %>').innerHTML = korisnikid;
-            document.getElementById('<%= zabolekarid.ClientID %>').innerHTML = zaboekar_id;
-         
+            document.getElementById('<%= korisnikidd.ClientID %>').innerHTML = korisnikid;
+     //       document.getElementById('<%= zabolekaridd.ClientID %>').innerHTML = zaboekar_id;
+
+            var label = document.getElementById("<%=zabolekaridd.ClientID %>");
+            label.innerHTML = zaboekar_id;
+            document.getElementById('<%=hidden.ClientID %>').value = label.innerHTML;
+
+            var label1 = document.getElementById("<%=korisnikidd.ClientID %>");
+            label1.innerHTML = korisnikid;
+            document.getElementById('<%=hidden1.ClientID %>').value = label1.innerHTML;
+
+            var label2 = document.getElementById("<%=pregledid.ClientID %>");
+            label2.innerHTML = terminid;
+            document.getElementById('<%=hidden2.ClientID %>').value = label2.innerHTML;
+
+            
         }
         </script>
 
@@ -23,6 +36,7 @@
                 <asp:PlaceHolder ID="zakazanitermini" runat="server"></asp:PlaceHolder>
 
                
+
 
                 <br />
                 <br />
@@ -48,21 +62,29 @@
         </div>
         <div class="modal-body">
           <p id="ace">е тука да са измисле убаво как шо, ама со ке са мисле требе да са заврше прегледо :D.</p>
-            <asp:Label ID="pregledid" runat="server"></asp:Label>
-            <asp:Label ID="korisnikid" runat="server" Text="Label"></asp:Label>
-            <asp:Label ID="zabolekarid" runat="server" Text="Label"></asp:Label>
-            </br>
+            <asp:Label ID="pregledid" runat="server" ForeColor="White"></asp:Label>
+            <asp:Label ID="korisnikidd" runat="server" ForeColor="White"   ></asp:Label>
+            <asp:Label ID="zabolekaridd" runat="server"  ForeColor="White" ></asp:Label>
+          <asp:HiddenField ID="hidden" runat="server" />
+              <asp:HiddenField ID="hidden1" runat="server" />
+              <asp:HiddenField ID="hidden2" runat="server" />
+
+      
             <asp:Label ID="Label3" runat="server" Text="Детали за прегледот:"></asp:Label>
+             </br>  </br>
+         <asp:Label ID="Label1" runat="server" Text="Наслов: "></asp:Label>   <asp:TextBox ID="naslov" runat="server"></asp:TextBox>
+                </br>
              </br>
+               <asp:Label ID="Label2" runat="server" Text="Опис: "></asp:Label>
              </br>
-            <asp:TextBox ID="TextBox1" TextMode="multiline" runat="server" Height="300px" Width="400px"></asp:TextBox>
+            <asp:TextBox ID="opis" TextMode="multiline" runat="server" Height="300px" Width="400px"></asp:TextBox>
             </br>
             </br>
             <asp:Button ID="zavrsiPregled" runat="server" OnClick="zavrsiPregled_click" Text="Заврши го прегледот" Width="200px" />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
-        </div>
+        </div
       </div>
     </div>
   </div>

@@ -40,13 +40,49 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.Label pregledid;
         
         /// <summary>
-        /// zabolekarid control.
+        /// korisnikidd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label zabolekarid;
+        protected global::System.Web.UI.WebControls.Label korisnikidd;
+        
+        /// <summary>
+        /// zabolekaridd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label zabolekaridd;
+        
+        /// <summary>
+        /// hidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidden;
+        
+        /// <summary>
+        /// hidden1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidden1;
+        
+        /// <summary>
+        /// hidden2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidden2;
         
         /// <summary>
         /// Label3 control.
@@ -58,13 +94,22 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// TextBox1 control.
+        /// naslov control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox naslov;
+        
+        /// <summary>
+        /// opis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox opis;
         
         /// <summary>
         /// zavrsiPregled control.

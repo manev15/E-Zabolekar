@@ -155,8 +155,78 @@ namespace Acka
             return rez;
         }
 
+        private void brisiTermin()
+        {
+            int aaaaaaaaaaa = Convert.ToInt32(hidden2.Value);
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
+            SqlCommand komanda = new SqlCommand();
+            komanda.Connection = konekcija;
+            komanda.CommandText = "DELETE from Termin WHERE termin_id='"+aaaaaaaaaaa+"'";
+
+          
+
+            try
+            {
+                konekcija.Open();
+                komanda.ExecuteNonQuery();
+
+            }
+            catch (Exception err)
+            {
+
+                poraka.Text = err.Message;
+            }
+            finally
+            {
+                konekcija.Close();
+            }
+
+
+
+
+        } 
+
         protected void zavrsiPregled_click(object sender, EventArgs e)
         {
+            //var zadID = Convert.ToInt16(zabolekaridd.Text);
+            //int korID = Convert.ToInt16(korisnikidd.Text);
+            int rez1 = Convert.ToInt32(hidden.Value);
+            int rez2 = Convert.ToInt32(hidden1.Value);
+                //  rez = Convert.ToInt32(zabolekaridd.Text);
+          
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
+            SqlCommand komanda = new SqlCommand();
+            komanda.Connection = konekcija;
+            komanda.CommandText = "INSERT INTO GotoviPregledii (naslov, opispregled, zabolekar_id,korisnik_id)" +
+                "VALUES(@naslov, @opispregled, @zabolekar_id,@korisnik_id) ";
+         
+            komanda.Parameters.AddWithValue("@naslov", naslov.Text);
+            komanda.Parameters.AddWithValue("@opispregled",opis.Text );
+            komanda.Parameters.AddWithValue("@zabolekar_id", rez1);
+            komanda.Parameters.AddWithValue("@korisnik_id", rez2);
+       
+            try
+            {
+                konekcija.Open();
+                komanda.ExecuteNonQuery();
+
+            }
+            catch (Exception err)
+            {
+
+                poraka.Text = err.Message;
+            }
+            finally
+            {
+                konekcija.Close();
+            }
+
+
+
+
+            brisiTermin();
             Response.Redirect("MoiTerminiAdmin.aspx");
         }
 
