@@ -155,11 +155,20 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Anketi.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\agency.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\datepicker.css" />
+    <Content Include="Content\material-fullpalette.css" />
+    <Content Include="Content\material-fullpalette.min.css" />
+    <Content Include="Content\material.css" />
+    <Content Include="Content\material.min.css" />
+    <Content Include="Content\ripples.css" />
+    <Content Include="Content\ripples.min.css" />
+    <Content Include="Content\roboto.css" />
+    <Content Include="Content\roboto.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="DefaultAdmin.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -172,6 +181,8 @@
     <Content Include="images\pinlayer1.png" />
     <Content Include="images\pinlayer2.png" />
     <Content Include="images\slika.jpg" />
+    <Content Include="js\flot-data.js" />
+    <Content Include="js\morris-data.js" />
     <Content Include="Login.aspx" />
     <Content Include="LoginAdmin.aspx" />
     <Content Include="Logout.aspx" />
@@ -184,13 +195,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\material.js" />
+    <Content Include="Scripts\material.min.js" />
+    <Content Include="Scripts\ripples.js" />
+    <Content Include="Scripts\ripples.min.js" />
     <Content Include="ZakazeniTermini.aspx" />
     <Content Include="ZakaziPregled.aspx" />
     <Content Include="AdminMaster.Master" />
     <Content Include="zapregled.aspx" />
     <Content Include="zaprofil.aspx" />
     <Content Include="less\datepicker.less" />
+    <Content Include="ZavrseniPregledi.aspx" />
     <Content Include="zazakazenipregledi.aspx" />
+    <Content Include="Content\material-fullpalette.css.map" />
+    <Content Include="Content\material-fullpalette.min.css.map" />
+    <Content Include="Content\material.css.map" />
+    <Content Include="Content\material.min.css.map" />
+    <Content Include="Content\ripples.css.map" />
+    <Content Include="Content\ripples.min.css.map" />
+    <Content Include="Content\roboto.css.map" />
+    <Content Include="Content\roboto.min.css.map" />
+    <Content Include="bower.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\agency.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -233,6 +258,8 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\material.min.js.map" />
+    <Content Include="Scripts\ripples.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -310,6 +337,13 @@
     </Compile>
     <Compile Include="AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Anketi.aspx.cs">
+      <DependentUpon>Anketi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anketi.aspx.designer.cs">
+      <DependentUpon>Anketi.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -439,6 +473,13 @@
     </Compile>
     <Compile Include="zaprofil.aspx.designer.cs">
       <DependentUpon>zaprofil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ZavrseniPregledi.aspx.cs">
+      <DependentUpon>ZavrseniPregledi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZavrseniPregledi.aspx.designer.cs">
+      <DependentUpon>ZavrseniPregledi.aspx</DependentUpon>
     </Compile>
     <Compile Include="zazakazenipregledi.aspx.cs">
       <DependentUpon>zazakazenipregledi.aspx</DependentUpon>

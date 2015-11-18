@@ -4,7 +4,7 @@
      
     <div class="container" style="margin-top: 2%">
 
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Мој профил</h3>
             </div>

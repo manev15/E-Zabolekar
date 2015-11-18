@@ -17,6 +17,7 @@ namespace Acka
             if (!IsPostBack)
             {
                 ispolni();
+                ispolniNovosti();
 
             }
             if (Session["korisnik"] != null)
@@ -24,6 +25,47 @@ namespace Acka
                 string korisnik = (string)Session["korisnik"];
                 //((Label)this.Master.FindControl("lblLogged")).Text = korisnik;
                 //     ((Button)this.Master.FindControl("loginn")).Visible = false;
+            }
+        }
+
+        private void ispolniNovosti()
+        {
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
+            string sqlString = "SELECT top 5 * FROM Novosti order by datum asc ";
+            SqlCommand komanda = new SqlCommand(sqlString, konekcija);
+            SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+            DataSet ds = new DataSet();
+            string html = "";
+            string naslov = "";
+            try
+            {
+                konekcija.Open();
+                adapter.Fill(ds, "Termin");
+         
+                foreach (DataTable table in ds.Tables)
+                {
+                    foreach (DataRow row in table.Rows)
+                    {
+                        naslov = row["naslov"].ToString();
+
+                   html = html + " <button type='button' class='list-group-item' style='height:30px'><i class='fa fa-chevron-right'></i> "+ naslov+"</button> ";
+          
+                    
+                    }
+                }
+
+                placeZanovosti.Controls.Add(new LiteralControl(html));
+                
+                ViewState["dataset"] = ds;
+            }
+            catch (Exception err)
+            {
+
+            }
+            finally
+            {
+                konekcija.Close();
             }
         }
 

@@ -2,9 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+
     <style>
         .carousel-control.left, .carousel-control.right {
             background-image: none;
@@ -14,15 +13,18 @@
         .carousel {
             height: 341px;
             margin-bottom: 60px;
+            padding-top:1%;
         }
 
         .carousel-caption {
             z-index: 10;
+      
         }
 
         .carousel .item {
             height: 400px;
             top: 10px;
+           
             // background-color: #777;
         }
 
@@ -32,9 +34,10 @@
             left: 0;
             min-width: 100%;
             height: 400px;
+              
         }
     </style>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -85,28 +88,24 @@
 
     <br />
     <br />
+    
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Последни новости</h3>
                     </div>
                     
                         
                         <div class="list-group">
-                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>Владимир Путин во посета на Валандово!!!!</button>
-                         
-                             <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>Александар Манев шампион на овогодинешната ракијада</button>
-                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>И тако даље</button>
-                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>И тако даље</button>
-                            <button type="button" class="list-group-item"><span class="glyphicon glyphicon-triangle-right"></span>И тако даље</button>
+                                <asp:PlaceHolder ID="placeZanovosti" runat="server"></asp:PlaceHolder>
                         </div>
                     
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Анкети</h3>
                     </div>

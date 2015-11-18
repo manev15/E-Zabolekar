@@ -112,7 +112,7 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
 
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -160,6 +160,22 @@
                     });
 
                 });
+                $("#btnLogIn").click(function () {
+                    $("#txtUserName").prop('required', true);
+                    $("#txtPassword").prop('required', true);
+
+                });
+                $("#RegisterSubmit").click(function () {
+                    $("#txtFirstName").prop('required', true);
+                    $("#txtLastName").prop('required', true);
+                    $("#txtUsernam").prop('required', true);
+                    $("#txtPasswordd").prop('required', true);
+                    
+                    $("#txtTelefone").prop('required', true);
+                    $("#txtLocation").prop('required', true);
+
+                });
+              
 
                 var pickerOpts = {
                     dateFormat: "dd-mm-yy"
@@ -193,6 +209,9 @@
             //    });
 
             //});
+
+
+       
         </script>
 
         <div class="container" style="padding-top: 50px">
@@ -210,6 +229,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <form id="login-form" role="form" style="display: block;">
+                                        <asp:Label ID="lblPoraka1" runat="server" Text=""></asp:Label>
                                         <div class="form-group">
                                             <asp:TextBox ID="txtUserName" class="form-control" placeholder="Username" runat="server"></asp:TextBox>
                                         </div>

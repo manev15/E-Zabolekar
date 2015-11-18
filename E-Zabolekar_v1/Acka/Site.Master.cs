@@ -21,11 +21,11 @@ namespace Acka
 
             if (Session["korisnik"] == null)
             {
-                a = "<ul class='nav navbar-nav navbar-right'><li ><a href='Login.aspx' id='loginn' href='Login.aspx'>Најава</a></li><li ><asp:Label ID='lblLogged' runat='server' Text=''></asp:Label></li></ul>";
+                a = "<ul class='nav navbar-nav navbar-right'><li ><a href='Login.aspx' id='loginn'><span class='glyphicon glyphicon-log-in'></span> Најава</a></li><li ><asp:Label ID='lblLogged' runat='server' Text=''></asp:Label></li></ul>";
             }
             else
             {
-                a = "<ul class='nav navbar-nav navbar-right'><li ><a id='logoutt' href='Logout.aspx' >Одјави се</a></li></ul>";
+                a = "<ul class='nav navbar-nav navbar-right'><li ><a id='logoutt' href='Logout.aspx' ><span class='glyphicon glyphicon-log-in'></span> Одјави се</a></li></ul>";
 
             }
             najava.Controls.Add(new LiteralControl(a));

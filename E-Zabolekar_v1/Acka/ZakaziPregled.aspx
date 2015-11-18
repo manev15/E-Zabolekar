@@ -18,7 +18,7 @@
 </ul>--%>
 
 
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Информации за прегледот</h3>
             </div>
@@ -98,7 +98,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><asp:Button ID="Button1" runat="server" Text="Закажи" OnClick="Button1_Click"  /></td>
+                        <td><asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Закажи" OnClick="Button1_Click"  /></td>
                     </tr>
                     <tr>
                         <td>

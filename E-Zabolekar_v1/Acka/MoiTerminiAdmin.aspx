@@ -25,7 +25,7 @@
         </script>
 
      <div class="container" style="margin-top: 2%">
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Закажени термини</h3>
             </div>
@@ -73,18 +73,18 @@
             <asp:Label ID="Label3" runat="server" Text="Детали за прегледот:"></asp:Label>
              </br>  </br>
          <asp:Label ID="Label1" runat="server" Text="Наслов: "></asp:Label>   <asp:TextBox ID="naslov" runat="server"></asp:TextBox>
-                </br>
-             </br>
+                <br/>
+             <br/>
                <asp:Label ID="Label2" runat="server" Text="Опис: "></asp:Label>
-             </br>
+             <br/>
             <asp:TextBox ID="opis" TextMode="multiline" runat="server" Height="300px" Width="400px"></asp:TextBox>
-            </br>
-            </br>
+            <br/>
+            <br/>
             <asp:Button ID="zavrsiPregled" runat="server" OnClick="zavrsiPregled_click" Text="Заврши го прегледот" Width="200px" />
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
-        </div
+        </div>
       </div>
     </div>
   </div>

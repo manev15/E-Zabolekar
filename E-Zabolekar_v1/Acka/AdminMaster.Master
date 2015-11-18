@@ -15,29 +15,50 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/agency.css" rel="stylesheet">
-
-    <!-- Custom Fonts 
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>-->
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-   <!--	<script type="text/javascript">
-   	    $(function () {
-   	        $("li").click(function () {
-   	            // remove classes from all
-   	            $("li").addClass("active");
-   	            // add class to the one we clicked
-   	            $(this).removeClass("active");
-   	        });
-   	    });
-	</script>
-       -->
+    
 
 </head>
 <body>
-    <form runat="server">
+    
+       <!-- Start navigation -->
+       
+      <div class="navbar navbar-default navbar-fixed-top">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a  href="#" class="navbar-brand">Е-Заболекар</a>
+           
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+         <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li id="" ><a  href="DefaultAdmin.aspx"><span class="glyphicon glyphicon-home"></span> Почетна</a></li>
+                <li id="" ><a  href="MoiTerminiAdmin.aspx"><span class="glyphicon glyphicon-list-alt"></span> Мои термини</a></li>
+                <li><a href="ZavrseniPregledi.aspx"><span class="glyphicon glyphicon-th-list"></span> Завршени прегледи</a></li> 	
+                <li><a href="#">Извештаи</a></li>
+                <li><a href="Anketi.aspx">Анкети</a></li>
+                <li><a href="#">Новости</a></li>
+               
+            </ul>
+          <%--  <ul class="nav navbar-nav navbar-right">
+                <li ><a type="button" id="loginn" href="Login.aspx">Најава</a></li>
+                <li >
+                    <asp:Label ID="lblLogged" runat="server" Text=""></asp:Label></li>
+            </ul>--%>
+              <asp:PlaceHolder ID="najava" runat="server"></asp:PlaceHolder>
+
+
+        </div>
+            </div>
+  </div>
+        <form runat="server">
+
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -58,43 +79,24 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-       <!-- Start navigation -->
-       
-      <div class="navbar navbar-default navbar-fixed-top">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a  href="#" class="navbar-brand">Е-Заболекар</a>
-           
-        </div>
-        <!-- Collection of nav links and other content for toggling -->
-         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li id="" ><a  href="DefaultAdmin.aspx">Почетна</a></li>
-                <li id="" ><a  href="MoiTerminiAdmin.aspx">Мои термини</a></li>
-                <li><a href="#">Завршени прегледи</a></li>
-                <li><a href="#">Нешто</a></li>
-               
-            </ul>
-          <%--  <ul class="nav navbar-nav navbar-right">
-                <li ><a type="button" id="loginn" href="Login.aspx">Најава</a></li>
-                <li >
-                    <asp:Label ID="lblLogged" runat="server" Text=""></asp:Label></li>
-            </ul>--%>
-              <asp:PlaceHolder ID="najava" runat="server"></asp:PlaceHolder>
+        <!-- Material Design for Bootstrap -->
+        <link href="Content/roboto.min.css" rel="stylesheet" />
+        <link href="Content/material.min.css" rel="stylesheet" />
+        <link href="Content/ripples.min.css" rel="stylesheet" />
+        <script src="Scripts/material.min.js"></script>
+        <script src="Scripts/ripples.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 
 
-        </div>
-            </div>
-  </div>
-       
+        <script>
+            $.material.init();
+        
+
+
+        </script>
+
+
+
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

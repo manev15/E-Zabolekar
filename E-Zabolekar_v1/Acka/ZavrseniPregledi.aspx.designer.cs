@@ -10,7 +10,34 @@
 namespace Acka {
     
     
-    public partial class MoiTerminiAdmin {
+    public partial class ZavrseniPregledi {
+        
+        /// <summary>
+        /// hidenzaopis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hidenzaopis;
+        
+        /// <summary>
+        /// zavrsenipregledi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder zavrsenipregledi;
+        
+        /// <summary>
+        /// zapregled control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder zapregled;
         
         /// <summary>
         /// poraka control.
@@ -22,22 +49,31 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.Label poraka;
         
         /// <summary>
-        /// zakazanitermini control.
+        /// PlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder zakazanitermini;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
         
         /// <summary>
-        /// pregledid control.
+        /// naslovvv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pregledid;
+        protected global::System.Web.UI.WebControls.Label naslovvv;
+        
+        /// <summary>
+        /// gotovid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label gotovid;
         
         /// <summary>
         /// korisnikidd control.
@@ -56,6 +92,15 @@ namespace Acka {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label zabolekaridd;
+        
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// hidden control.
@@ -85,6 +130,15 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.HiddenField hidden2;
         
         /// <summary>
+        /// Hidden3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Hidden3;
+        
+        /// <summary>
         /// Label3 control.
         /// </summary>
         /// <remarks>
@@ -109,7 +163,7 @@ namespace Acka {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox naslov;
+        protected global::System.Web.UI.WebControls.Label naslov;
         
         /// <summary>
         /// Label2 control.
@@ -121,21 +175,39 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// opis control.
+        /// opisPregled control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox opis;
+        protected global::System.Web.UI.WebControls.Label opisPregled;
         
         /// <summary>
-        /// zavrsiPregled control.
+        /// pnlModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button zavrsiPregled;
+        protected global::System.Web.UI.WebControls.Panel pnlModal;
+        
+        /// <summary>
+        /// pnlInner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlInner;
+        
+        /// <summary>
+        /// pnlContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlContent;
     }
 }

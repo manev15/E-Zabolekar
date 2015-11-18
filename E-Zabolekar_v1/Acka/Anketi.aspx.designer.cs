@@ -10,33 +10,24 @@
 namespace Acka {
     
     
-    public partial class _Default {
+    public partial class Anketi {
         
         /// <summary>
-        /// placeZanovosti control.
+        /// txtNaslov control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder placeZanovosti;
+        protected global::System.Web.UI.WebControls.TextBox txtNaslov;
         
         /// <summary>
-        /// GridView1 control.
+        /// txtOpis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// lblPoraka control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPoraka;
+        protected global::System.Web.UI.WebControls.TextBox txtOpis;
     }
 }

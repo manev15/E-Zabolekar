@@ -81,7 +81,7 @@ namespace Acka
                         string[] data = datum.Split(' ');
 
 
-                        html = html + "<div class='list-group'><button  onclick='najdi("+termin_id+","+korisnikid+","+zabolekar_id+")'  type='button' class='list-group-item' style='width:550px' data-toggle='modal' data-target='#myModal'>" + "<b>Датум: </b>" + data[0] + "  " + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Термин:</b> " + od + "-" + dot + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Пациент:</b> " + getPacientName(korisnikid) + "</button></div>";
+                        html = html + "<div class='list-group'><button  onclick='najdi(" + termin_id + "," + korisnikid + "," + zabolekar_id + ")'  type='button' class='list-group-item' style='width:550px;background:#e5f4f3;height:50px;' data-toggle='modal' data-target='#myModal'>" + "<b>Датум: </b>" + data[0] + "  " + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Термин:</b> " + od + "-" + dot + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Пациент:</b> " + getPacientName(korisnikid) + "</button></div>";
                     }
                 }
 
@@ -199,13 +199,16 @@ namespace Acka
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
             SqlCommand komanda = new SqlCommand();
             komanda.Connection = konekcija;
-            komanda.CommandText = "INSERT INTO GotoviPregledii (naslov, opispregled, zabolekar_id,korisnik_id)" +
-                "VALUES(@naslov, @opispregled, @zabolekar_id,@korisnik_id) ";
-         
+
+
+            komanda.CommandText = "INSERT INTO GotoviPreglediii (naslov, opispregled, zabolekar_id,korisnik_id,datum)" +
+                "VALUES(@naslov, @opispregled, @zabolekar_id,@korisnik_id,@datum) ";
+           string data=DateTime.Today.ToString("dd-MM-yyyy");
             komanda.Parameters.AddWithValue("@naslov", naslov.Text);
             komanda.Parameters.AddWithValue("@opispregled",opis.Text );
             komanda.Parameters.AddWithValue("@zabolekar_id", rez1);
             komanda.Parameters.AddWithValue("@korisnik_id", rez2);
+            komanda.Parameters.AddWithValue("@datum", data);
        
             try
             {

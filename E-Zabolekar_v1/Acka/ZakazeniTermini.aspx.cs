@@ -19,6 +19,7 @@ namespace Acka
         private string dot;
         private int korisnik_id;
         private int zabolekarid;
+        private DateTime today;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,19 +34,27 @@ namespace Acka
                 {
                     korisnik = (string)Session["korisnik"];
                 }
+                today = DateTime.Today;
                 getProfileInfo();
-                ispolniZakazeni();
+                ispolniZakazeni(today);
 
             }
 
 
         }
+        protected void Calendar2_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime peroCvrc = Calendar2.SelectedDate;
+            getProfileInfo();
+            ispolniZakazeni(peroCvrc);
+        }
 
-        private void ispolniZakazeni()
+        private void ispolniZakazeni(DateTime daticka)
         {
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT * FROM Termin where korisnik_id='" + korisnik_id + "'"+"order by datum asc";
+            string sqlString = "SELECT * FROM Termin where korisnik_id='" + korisnik_id + "'" + "and datum='" + daticka + "'" + "order by datum asc";
+          
             SqlCommand komanda = new SqlCommand(sqlString, konekcija);
             SqlDataAdapter adapter = new SqlDataAdapter(komanda);
             DataSet ds = new DataSet();
@@ -78,7 +87,9 @@ namespace Acka
                         dot = row["do"].ToString();
                         zabolekarid = Convert.ToInt32(row["zabolekar_id"].ToString());
                         string[] data = datum.Split(' ');
-                        html = html + "<div class='list-group'><button type='button' class='list-group-item' style='width:550px'>" + "<b>Датум: </b>" + data[0] + "  " + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Термин:</b> " + od + "-" + dot + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Заболекар:</b> " + getZabolekarName(zabolekarid) + "</button></div>";
+                        html = html + "<div class='list-group'><button type='button' class='list-group-item' style='width:550px;background:#e5f4f3;height:50px;'>" + "<b>Датум: </b>" + data[0] + "  " + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Термин:</b> " + od + "-" + dot + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Заболекар:</b> " + getZabolekarName(zabolekarid) + "</button></div>";
+
+                   //     html = html + "  <div class='list-group'> <button type='button  class='list-group-item'>  <div class='row-content'><h4 class='list-group-item-heading'>" + "<b>Датум: </b>" + data[0] + "  " + "  " + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Термин:</b> " + od + "-" + dot + "&nbsp;&nbsp;&nbsp;&nbsp;<b>Заболекар:</b> " + getZabolekarName(zabolekarid) + "</h4> </div></div><div class='list-group-separator'></button> </div>";
                     }
                 }
 
@@ -92,11 +103,13 @@ namespace Acka
             finally
             {
                 konekcija.Close();
+                Calendar2.SelectedDates.Clear();
             }
         }
 
         private void getProfileInfo()
         {
+            string korisnik = (string)Session["korisnik"];
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
             string sqlString = "SELECT * FROM Korisnik where user_name='" + korisnik + "'";
