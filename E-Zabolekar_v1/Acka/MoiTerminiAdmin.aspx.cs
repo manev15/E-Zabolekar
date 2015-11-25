@@ -19,7 +19,7 @@ namespace Acka
         private string dot;
         private int zabolekar_id,termin_id;
         private int korisnikid;
-
+        private DateTime today;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,19 +33,20 @@ namespace Acka
                 {
                     korisnik = (string)Session["korisnik"];
                 }
+                today = DateTime.Today;
                 getProfileInfo();
-                ispolniZakazeni();
+                ispolniZakazeni(today);
 
             }
 
 
         }
 
-        private void ispolniZakazeni()
+        private void ispolniZakazeni(DateTime daticka)
         {
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT * FROM Termin where zabolekar_id='" + zabolekar_id + "'"+"order by datum asc";
+            string sqlString = "SELECT * FROM Termin where zabolekar_id='" + zabolekar_id + "'" + "and datum='" + daticka + "'" + "order by datum asc";
             SqlCommand komanda = new SqlCommand(sqlString, konekcija);
             SqlDataAdapter adapter = new SqlDataAdapter(komanda);
             DataSet ds = new DataSet();
@@ -61,17 +62,22 @@ namespace Acka
 
                 if (ds.Tables.Count == 1)
                 {
-                    poraka.Text = "Немате закажани термини!!";
+                    greska.Visible = true;
+                    string aa = Convert.ToString(daticka);
+                    string[] data = aa.Split(' ');
+                    poraka.Text = "На ден " + data[0] + " немате закажени термини!!";
 
                 }
                 else
                 {
+                    greska.Visible = false;
                     poraka.Text = "";
                 }
                 foreach (DataTable table in ds.Tables)
                 {
                     foreach (DataRow row in table.Rows)
                     {
+                        greska.Visible = false;
                         poraka.Text = "";
                         datum = row["datum"].ToString();
                         termin_id = Convert.ToInt32(row["termin_id"].ToString());
@@ -100,6 +106,7 @@ namespace Acka
 
         private void getProfileInfo()
         {
+            string korisnik = (string)Session["korisnik"];
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
             string sqlString = "SELECT * FROM Zabolekarr where user_name='" + korisnik + "'";
@@ -125,6 +132,13 @@ namespace Acka
                 konekcija.Close();
             }
         }
+        protected void Calendar3_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime peroCvrc = Calendar3.SelectedDate;
+            getProfileInfo();
+            ispolniZakazeni(peroCvrc);
+        }
+
         private string getPacientName(int idPacient)
         {
             string rez = "";

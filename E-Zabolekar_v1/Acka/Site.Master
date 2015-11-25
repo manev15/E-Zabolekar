@@ -18,10 +18,6 @@
 
 
 
-    <script>
-
-    </script>
-
 </head>
 <body>
   
@@ -43,7 +39,7 @@
                 <!-- Collection of nav links and other content for toggling -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li id="pocetna"> <a href="Default.aspx"><span class="glyphicon glyphicon-home"></span> Почетна</a></li>
+                        <li  id="pocetna"> <a href="Default.aspx"><span class="glyphicon glyphicon-home"></span> Почетна</a></li>
                         <li id="zakazi"><a href="ZakaziPregled.aspx"><span class="glyphicon glyphicon-pencil"></span> Закажи преглед</a></li>
                          <li><a href="ZakazeniTermini.aspx">  <span class="glyphicon glyphicon-list-alt"></span> Закажени термини</a></li>
                         <li><a href="News.aspx"><span class="glyphicon glyphicon-th-list"></span> Новости</a></li>
@@ -92,14 +88,29 @@
         <script src="Scripts/material.min.js"></script>
         <script src="Scripts/ripples.min.js"></script>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-
+            <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+          
 
         <script>
             $.material.init();
         
+               //$(function () {
+               //    $('#datetimepicker4').datetimepicker();
+               //});
+    
+            //$(document).ready(function () {
+            //    var url = window.location;
+            //    $('  .navbar-nav li' ).find('.active').removeClass('active');
+            //    $(' .navbar-nav li ').each(function () {
+            //        if (this.href == url) {
+            //            $(this).parent().addClass('active');
+            //        }
+            //    });
+            //});
+    </script>
 
 
-        </script>
+       
 
 
 

@@ -70,17 +70,22 @@ namespace Acka
 
                 if (ds.Tables.Count == 1)
                 {
-                    poraka.Text = "Немате закажани термини!!";
+                    greska.Visible = true;
+                    string aa =Convert.ToString(daticka);
+                    string[] data = aa.Split(' ');
+                    poraka.Text = "На ден: "+data[0]+" немате закажани термини!!";
                 
                 }
                 else
                 {
+                    greska.Visible = false;
                     poraka.Text = "";
                 }
                 foreach (DataTable table in ds.Tables)
                 {
                     foreach (DataRow row in table.Rows)
                     {
+                        greska.Visible = false;
                         poraka.Text = "";
                         datum = row["datum"].ToString();
                         od  = row["od"].ToString();

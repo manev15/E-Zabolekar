@@ -22,6 +22,33 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.HiddenField hidenzaopis;
         
         /// <summary>
+        /// Calendar4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar4;
+        
+        /// <summary>
+        /// greska control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl greska;
+        
+        /// <summary>
+        /// poraka control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label poraka;
+        
+        /// <summary>
         /// zavrsenipregledi control.
         /// </summary>
         /// <remarks>
@@ -38,15 +65,6 @@ namespace Acka {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder zapregled;
-        
-        /// <summary>
-        /// poraka control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label poraka;
         
         /// <summary>
         /// PlaceHolder1 control.

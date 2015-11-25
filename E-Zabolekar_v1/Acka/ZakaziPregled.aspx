@@ -23,6 +23,18 @@
                 <h3 class="panel-title">Информации за прегледот</h3>
             </div>
             <div class="panel-body">
+                <div ID="greska" runat="server" visible="false" class="alert alert-dismissible alert-danger" style="max-width:50%;margin-left:27%">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>
+    <asp:Label ID="lblporaka" runat="server"></asp:Label>
+      </strong>
+</div>
+                <div ID="uspeh" runat="server" visible="false"  class="alert alert-dismissible alert-success" style="max-width:50%;margin-left:27%">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>
+      <asp:Label ID="lblporakauspeh" runat="server"></asp:Label>
+  </strong>
+</div>
                 <table class="nav-justified">
                     <tr>
                         <td>
@@ -52,13 +64,14 @@
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 <h4 class="modal-title">Избери датум</h4>
+                                                <br/>
                                             </div>
                                             <div class="modal-body">
                                                 <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
 
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Затвори</button>
                                             </div>
                                         </div>
                                     </div>
@@ -98,11 +111,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Закажи" OnClick="Button1_Click"  /></td>
+                        <td><asp:Button ID="Button1" class="btn btn-raised btn-success" runat="server" Text="Закажи" OnClick="Button1_Click"  /></td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lblporaka" runat="server"></asp:Label>
+                          
                         </td>
                     </tr>
                 </table>

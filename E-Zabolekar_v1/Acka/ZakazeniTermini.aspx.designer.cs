@@ -22,6 +22,15 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.Calendar Calendar2;
         
         /// <summary>
+        /// greska control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl greska;
+        
+        /// <summary>
         /// poraka control.
         /// </summary>
         /// <remarks>

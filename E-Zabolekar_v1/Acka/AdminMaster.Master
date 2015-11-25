@@ -41,7 +41,7 @@
                 <li id="" ><a  href="DefaultAdmin.aspx"><span class="glyphicon glyphicon-home"></span> Почетна</a></li>
                 <li id="" ><a  href="MoiTerminiAdmin.aspx"><span class="glyphicon glyphicon-list-alt"></span> Мои термини</a></li>
                 <li><a href="ZavrseniPregledi.aspx"><span class="glyphicon glyphicon-th-list"></span> Завршени прегледи</a></li> 	
-                <li><a href="#">Извештаи</a></li>
+                <li><a href="Izvestai.aspx">Извештаи</a></li>
                 <li><a href="Anketi.aspx">Анкети</a></li>
                 <li><a href="#">Новости</a></li>
                

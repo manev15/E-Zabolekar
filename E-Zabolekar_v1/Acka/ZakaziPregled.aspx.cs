@@ -107,13 +107,16 @@ namespace Acka
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            
             if (termini.SelectedIndex != -1 && datum.Text.Length != 0)
             {
 
 
                 if (proverkaTermin())
                 {
-                    lblporaka.Text = "Терминот е зафатен, одберете друг термин!!";
+                    greska.Visible = true;
+                    uspeh.Visible = false;
+                    lblporaka.Text = "Терминот е зафатен, одберете друг термин!";
                 }
                 else
                 {
@@ -157,12 +160,17 @@ namespace Acka
                     termini.ClearSelection();
                     datum.Text = "";
                     Calendar1.SelectedDates.Clear();
-                    lblporaka.Text = "Успешно закажан термин";
+                    uspeh.Visible = true;
+                    greska.Visible = false;
+                    lblporakauspeh.Text = "Успешно закажан термин!";
                 }
             }
             else
             {
-                lblporaka.Text = "Не се внесени сите информации за прегледот";
+                greska.Visible = true;
+                uspeh.Visible = false;
+                lblporaka.Text = "Не се внесени сите информации за прегледот!";
+
             }
 
         }

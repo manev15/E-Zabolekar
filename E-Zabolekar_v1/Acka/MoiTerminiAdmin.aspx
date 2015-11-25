@@ -29,9 +29,33 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Закажени термини</h3>
             </div>
+             <button class="btn btn-info btn-sm" data-toggle="modal" style="margin-left: 2%" data-target="#complete ">Избери датум</button>
+            <div id="complete" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Избери Датум</h4>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Calendar ID="Calendar3" runat="server" OnSelectionChanged="Calendar3_SelectionChanged"></asp:Calendar>
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-primary">Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="panel-body" style="margin-left:25%">
-                <div style="margin-left:-34%">
-                 <asp:Label ID="poraka" runat="server" Font-Size="Larger"></asp:Label>
+                <div style="margin-left: -34%">
+                    <div id="greska" runat="server" visible="false" class="alert alert-dismissible alert-danger" style="max-width: 50%; margin-left: 27%">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+
+                        <asp:Label ID="poraka" runat="server" Text="Label"></asp:Label>
+
+                    </div>
                 </div>
                 <asp:PlaceHolder ID="zakazanitermini" runat="server"></asp:PlaceHolder>
 
@@ -71,7 +95,7 @@
 
       
             <asp:Label ID="Label3" runat="server" Text="Детали за прегледот:"></asp:Label>
-             </br>  </br>
+             <br/>  <br/>
          <asp:Label ID="Label1" runat="server" Text="Наслов: "></asp:Label>   <asp:TextBox ID="naslov" runat="server"></asp:TextBox>
                 <br/>
              <br/>
@@ -80,10 +104,10 @@
             <asp:TextBox ID="opis" TextMode="multiline" runat="server" Height="300px" Width="400px"></asp:TextBox>
             <br/>
             <br/>
-            <asp:Button ID="zavrsiPregled" runat="server" OnClick="zavrsiPregled_click" Text="Заврши го прегледот" Width="200px" />
+            <asp:Button  class="btn btn-raised btn-success"   ID="zavrsiPregled" runat="server" OnClick="zavrsiPregled_click" Text="Заврши го прегледот" />
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Затвори</button>
         </div>
       </div>
     </div>

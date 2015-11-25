@@ -80,7 +80,7 @@
     <br />
     <br />
 
-    <div class="container">
+    <div class="jumbotron">
         <p style="font-size: 50px">ДОБРЕДОЈДОВТЕ</p>
         
         <p style="font-size: 20px">Нашите заболекари ке се погрижат за вашите расипани заби :)</p>

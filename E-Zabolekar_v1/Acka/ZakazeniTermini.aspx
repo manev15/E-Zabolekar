@@ -23,11 +23,12 @@
                 <h4 class="modal-title">Избери Датум</h4>
             </div>
             <div class="modal-body">
+                <br/>
                    <asp:Calendar ID="Calendar2" runat="server" OnSelectionChanged="Calendar2_SelectionChanged"></asp:Calendar>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Затвори</button>
              
             </div>
         </div>
@@ -35,7 +36,13 @@
          </div>   
                     
                 <div style="margin-left:-34%">
-                 <asp:Label ID="poraka" runat="server" Font-Size="Larger"></asp:Label>
+                      <div ID="greska" runat="server" visible="false" class="alert alert-dismissible alert-danger" style="max-width:50%;margin-left:27%">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+ 
+    <asp:Label ID="poraka" runat="server" Font-Size="Larger"></asp:Label>
+      
+</div>
+                
                 </div>
                 <asp:PlaceHolder ID="zakazanitermini" runat="server"></asp:PlaceHolder>
 

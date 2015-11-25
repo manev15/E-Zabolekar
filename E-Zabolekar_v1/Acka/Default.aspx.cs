@@ -49,7 +49,7 @@ namespace Acka
                     {
                         naslov = row["naslov"].ToString();
 
-                   html = html + " <button type='button' class='list-group-item' style='height:30px'><i class='fa fa-chevron-right'></i> "+ naslov+"</button> ";
+                        html = html + " <button type='button' class='list-group-item' style='height:30px'><a  href='News.aspx' style='color:black'><i class='fa fa-chevron-right'></i> " + naslov + "</a></button> ";
           
                     
                     }

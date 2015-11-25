@@ -143,7 +143,8 @@ namespace Acka
                 }
                 catch (Exception err)
                 {
-                    lblPoraka1.Text = "Грешно корисничко име или лозинка!!!";
+                    greska.Visible = true;
+                    lblPoraka1.Text = "Грешно корисничко име или лозинка!";
                 }
                 finally
                 {

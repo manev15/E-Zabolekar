@@ -21,29 +21,43 @@ namespace Acka
         private string naslovv;
         private int zabolekar_id, termin_id,gotov_id;
         private int korisnikid;
+        private DateTime today;
         protected void Page_Load(object sender, EventArgs e)
         {
-         
-           
+
+
             if (!IsPostBack)
             {
-              //  Page.ClientScript.GetPostBackEventReference(Button1, "onclick");
+                //  Page.ClientScript.GetPostBackEventReference(Button1, "onclick");
                 if (Session["korisnik"] != null)
                 {
                     korisnik = (string)Session["korisnik"];
                 }
+                today = DateTime.Today;
                 getProfileInfo();
-                ispolniZavrseni();
-
+                ispolniZavrseni(today);
             }
        
     
         }
-        private void ispolniZavrseni()
+        protected void Calendar4_SelectionChanged(object sender, EventArgs e)
         {
+            DateTime peroCvrc = Calendar4.SelectedDate;
+            getProfileInfo();
+            ispolniZavrseni(peroCvrc);
+        }
+
+        private void ispolniZavrseni(DateTime daticka)
+        {
+            string niza = daticka.ToString();
+            string[] nizi = niza.Split(' ');
+            string[] nizi2 = nizi[0].Split('/');
+            string konecen = nizi2[1] + "-" + nizi2[0] + "-" + nizi2[2];
+
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT * FROM GotoviPreglediii where zabolekar_id='" + zabolekar_id + "'" + "order by datum asc";
+            string sqlString = "SELECT * FROM GotoviPreglediii where zabolekar_id='" + zabolekar_id + "'" + " and datum='" + konecen + "'" + "order by datum asc";
+
             SqlCommand komanda = new SqlCommand(sqlString, konekcija);
             SqlDataAdapter adapter = new SqlDataAdapter(komanda);
             DataSet ds = new DataSet();
@@ -59,17 +73,22 @@ namespace Acka
 
                 if (ds.Tables.Count == 1)
                 {
-                    poraka.Text = "Немате завршени термини!!";
+                    greska.Visible = true;
+                    string aa = Convert.ToString(daticka);
+                    string[] data = aa.Split(' ');
+                    poraka.Text = "На ден "+data[0]+" немате завршени термини!!";
 
                 }
                 else
                 {
+                    greska.Visible = false;
                     poraka.Text = "";
                 }
                 foreach (DataTable table in ds.Tables)
                 {
                     foreach (DataRow row in table.Rows)
                     {
+                        greska.Visible = false;
                         poraka.Text = "";
                         datum = row["datum"].ToString();
                         opis = row["naslov"].ToString();
@@ -175,6 +194,7 @@ namespace Acka
 
         private void getProfileInfo()
         {
+            korisnik = (string)Session["korisnik"];
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
             string sqlString = "SELECT * FROM Zabolekarr where user_name='" + korisnik + "'";
