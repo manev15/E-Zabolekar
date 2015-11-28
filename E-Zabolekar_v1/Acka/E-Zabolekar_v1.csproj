@@ -620,6 +620,7 @@
     <Content Include="MoiTerminiAdmin.aspx" />
     <Content Include="MojProfil.aspx" />
     <Content Include="News.aspx" />
+    <Content Include="newsAdmin.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -1180,6 +1181,13 @@
     </Compile>
     <Compile Include="News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newsAdmin.aspx.cs">
+      <DependentUpon>newsAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsAdmin.aspx.designer.cs">
+      <DependentUpon>newsAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

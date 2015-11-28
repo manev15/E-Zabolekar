@@ -46,9 +46,9 @@
 
     <div id="page-wrapper">
         <asp:Label ID="poraka" runat="server" Text="Label" Visible="false"></asp:Label>
-        <asp:Label ID="a" runat="server"  ForeColor="White" Text=" "></asp:Label>
-        <asp:Label ID="b" runat="server" ForeColor="White" Text=" "></asp:Label>
-        <asp:Label ID="c" runat="server"  ForeColor="White" Text=" "></asp:Label>
+        <asp:Label ID="a" runat="server"  ForeColor="#DCDCDC" Text=" " ></asp:Label>
+        <asp:Label ID="b" runat="server" ForeColor="#DCDCDC" Text=" "></asp:Label>
+        <asp:Label ID="c" runat="server"  ForeColor="#DCDCDC" Text=" "></asp:Label>
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Статистика на завршени прегледи</h1>
