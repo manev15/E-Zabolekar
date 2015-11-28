@@ -53,11 +53,11 @@
             </div>
 
             <div class="item">
-                <img src="images/slika.jpg" alt="Chania">
+                <img src="images/slika1.jpg" alt="Chania">
             </div>
 
             <div class="item">
-                <img src="images/slika.jpg" alt="Flower">
+                <img src="images/slika2.jpg" alt="Flower">
             </div>
 
             <div class="item">

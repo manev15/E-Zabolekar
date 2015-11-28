@@ -2,8 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container" style="padding-top:5%">
-       
+    <div class="container" style="padding-top:1%">
+         <h2 class="section-heading">Новости</h2>
      <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource2">
 
 
@@ -23,7 +23,7 @@
     <asp:SqlDataSource
         ConnectionString="<%$ ConnectionStrings:mojaKonekcija %>"
         ID="SqlDataSource2" runat="server"
-        SelectCommand="SELECT * FROM [Novosti]"></asp:SqlDataSource>
+        SelectCommand="SELECT * FROM [Novosti] order by datum desc"></asp:SqlDataSource>
 
   </div>
 

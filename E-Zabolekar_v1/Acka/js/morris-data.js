@@ -61,20 +61,20 @@
         resize: true
     });
 
-    Morris.Donut({
-        element: 'morris-donut-chart',
-        data: [{
-            label: "Нови курсеви",
-            value: 30
-        }, {
-            label: "Последен месец",
-            value: 50
-        }, {
-            label: "Постари курсеви",
-            value: 20
-        }],
-        resize: true
-    });
+    //Morris.Donut({
+    //    element: 'morris-donut-chart',
+    //    data: [{
+    //        label: "Нови прегледи",
+    //        value: 30
+    //    }, {
+    //        label: "Последен месец",
+    //        value: 50
+    //    }, {
+    //        label: "Постари прегледи",
+    //        value: 20
+    //    }],
+    //    resize: true
+    //});
 
     Morris.Bar({
         element: 'morris-bar-chart',

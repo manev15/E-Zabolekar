@@ -11,23 +11,5 @@ namespace Acka {
     
     
     public partial class Anketi {
-        
-        /// <summary>
-        /// txtNaslov control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNaslov;
-        
-        /// <summary>
-        /// txtOpis control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOpis;
     }
 }

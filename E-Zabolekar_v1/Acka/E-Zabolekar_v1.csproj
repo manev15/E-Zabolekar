@@ -597,6 +597,7 @@
     <Content Include="dist\css\sb-admin-2.css" />
     <Content Include="dist\css\timeline.css" />
     <Content Include="dist\js\sb-admin-2.js" />
+    <Content Include="DodadiNovost.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\1.jpg" />
     <Content Include="images\ace.jpg" />
@@ -607,6 +608,8 @@
     <Content Include="images\pinlayer1.png" />
     <Content Include="images\pinlayer2.png" />
     <Content Include="images\slika.jpg" />
+    <Content Include="images\slika1.jpg" />
+    <Content Include="images\slika2.jpg" />
     <Content Include="Izvestai.aspx" />
     <Content Include="js\bootstrap-datetimepicker.js" />
     <Content Include="js\flot-data.js" />
@@ -1117,6 +1120,13 @@
     </Compile>
     <Compile Include="DefaultAdmin.aspx.designer.cs">
       <DependentUpon>DefaultAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DodadiNovost.aspx.cs">
+      <DependentUpon>DodadiNovost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DodadiNovost.aspx.designer.cs">
+      <DependentUpon>DodadiNovost.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

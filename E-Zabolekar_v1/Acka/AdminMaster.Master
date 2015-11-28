@@ -43,7 +43,7 @@
                 <li><a href="ZavrseniPregledi.aspx"><span class="glyphicon glyphicon-th-list"></span> Завршени прегледи</a></li> 	
                 <li><a href="Izvestai.aspx">Извештаи</a></li>
                 <li><a href="Anketi.aspx">Анкети</a></li>
-                <li><a href="#">Новости</a></li>
+                <li><a href="DodadiNovost.aspx">Новости</a></li>
                
             </ul>
           <%--  <ul class="nav navbar-nav navbar-right">
@@ -91,7 +91,7 @@
         <script>
             $.material.init();
         
-
+           
 
         </script>
 

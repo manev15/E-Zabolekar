@@ -415,7 +415,9 @@ namespace Acka
                 string novi = "<div class='huge'>" + br1 + "</div>";
                 string posleden = "<div class='huge'>" + br2 + "</div>";
                 string postari = "<div class='huge'>" + br3 + "</div>";
-
+                a.Text = Convert.ToString(br1);
+                b.Text = Convert.ToString(br2);
+                c.Text = Convert.ToString(br3);
                 siteKursevi.Controls.Add(new LiteralControl(site));
                 noviKursevi.Controls.Add(new LiteralControl(novi));
                 posledenMesec.Controls.Add(new LiteralControl(posleden));

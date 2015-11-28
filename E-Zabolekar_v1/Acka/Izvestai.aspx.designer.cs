@@ -31,6 +31,33 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.Label poraka;
         
         /// <summary>
+        /// a control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label a;
+        
+        /// <summary>
+        /// b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label b;
+        
+        /// <summary>
+        /// c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label c;
+        
+        /// <summary>
         /// siteKursevi control.
         /// </summary>
         /// <remarks>

@@ -1,6 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeBehind="Izvestai.aspx.cs" Inherits="Acka.Izvestai" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
+    <script>
+
+        $(function () {
+            var a = document.getElementById("<%=a.ClientID %>").textContent;
+      
+            var b = document.getElementById("<%=b.ClientID %>").textContent;
+            var c = document.getElementById("<%=c.ClientID %>").textContent;
+        
+            console.log(a);
+            Morris.Donut({
+                element: 'morris-donut-chart',
+                data: [{
+                    label: "Последна недела",
+                    value: a
+                }, {
+                    label: "Последен месец",
+                    value: b
+                }, {
+                    label: "Постари прегледи",
+                    value: c
+                }],
+                resize: true
+            });
+        });
+        </script>
+
+
     <asp:Label ID="lblError" runat="server"></asp:Label>
        <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
@@ -19,8 +46,9 @@
 
     <div id="page-wrapper">
         <asp:Label ID="poraka" runat="server" Text="Label" Visible="false"></asp:Label>
-        
-
+        <asp:Label ID="a" runat="server"  ForeColor="White" Text=" "></asp:Label>
+        <asp:Label ID="b" runat="server" ForeColor="White" Text=" "></asp:Label>
+        <asp:Label ID="c" runat="server"  ForeColor="White" Text=" "></asp:Label>
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Статистика на завршени прегледи</h1>

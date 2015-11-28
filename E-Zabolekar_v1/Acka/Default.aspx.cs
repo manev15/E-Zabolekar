@@ -32,7 +32,7 @@ namespace Acka
         {
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT top 5 * FROM Novosti order by datum asc ";
+            string sqlString = "SELECT top 5 * FROM Novosti order by datum desc ";
             SqlCommand komanda = new SqlCommand(sqlString, konekcija);
             SqlDataAdapter adapter = new SqlDataAdapter(komanda);
             DataSet ds = new DataSet();
@@ -49,7 +49,7 @@ namespace Acka
                     {
                         naslov = row["naslov"].ToString();
 
-                        html = html + " <button type='button' class='list-group-item' style='height:30px'><a  href='News.aspx' style='color:black'><i class='fa fa-chevron-right'></i> " + naslov + "</a></button> ";
+                        html = html + " <button type='button' class='list-group-item' style='height:30px'><a href='news.aspx' style='color:black'><i class='fa fa-chevron-right'></i> " + naslov + "</a></button> ";
           
                     
                     }
