@@ -9,7 +9,7 @@
                 <h3 class="panel-title">Закажени термини</h3>
 
             </div>
-             <button class="btn btn-info btn-sm" data-toggle="modal" style="margin-left:2%" data-target="#complete ">Избери датум</button>
+             <button class="btn btn-primary btn-sm" data-toggle="modal" style="margin-left:2%" data-target="#complete ">Избери датум</button>
             <div class="panel-body" style="margin-left:25%">
                 <%-- modal za izbiranje na data --%>
                

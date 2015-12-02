@@ -603,6 +603,7 @@
     <Content Include="images\ace.jpg" />
     <Content Include="images\acee.jpg" />
     <Content Include="images\back.png" />
+    <Content Include="images\default.jpg" />
     <Content Include="images\logos.gif" />
     <Content Include="images\logos.png" />
     <Content Include="images\pinlayer1.png" />
@@ -1257,6 +1258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="upload\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -180,7 +180,7 @@ namespace Acka
             bool a = true;
             SqlConnection konekcija = new SqlConnection();
             konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
-            string sqlString = "SELECT od,datum FROM Termin";
+            string sqlString = "SELECT od,datum,zabolekar_id FROM Termin";
             //    string sqlString1 = "SELECT datum FROM Termin";
             SqlCommand komanda = new SqlCommand(sqlString, konekcija);
             //  SqlCommand komanda1 = new SqlCommand(sqlString1, konekcija);
@@ -207,6 +207,7 @@ namespace Acka
 
                 SqlDataReader citaj = komanda.ExecuteReader();
                 ArrayList lista = new ArrayList();
+                ArrayList listaZabol = new ArrayList();
                 while (citaj.Read())
                 {
                     lista.Add(citaj["od"].ToString());
@@ -214,7 +215,9 @@ namespace Acka
                     string data = citaj["datum"].ToString();
                     string[] niza = data.Split(' ');
                     string aa = niza[0];
+                    string zab = Convert.ToString(citaj["zabolekar_id"].ToString());
                     listaDatum.Add(aa);
+                    listaZabol.Add(zab);
 
 
                 }
@@ -227,7 +230,7 @@ namespace Acka
                 bool t = true;
                 bool r = true;
                 int i, j;
-                string aaa;
+                string aaa,zabol;
                 for (i = 0; i < listaDatum.Count; i++)
                 {
                      aaa = listaDatum[i].ToString();
@@ -241,15 +244,22 @@ namespace Acka
                             string[] odd = od.Split(' ');
                             string jod = lista[j].ToString();
                              aaa = listaDatum[j].ToString();
+                             zabol = listaZabol[j].ToString();
                             if (aaa == datum.Text)
                             {
 
                                 if (lista[j].ToString() == odd[0])
                                 {
-                                    a = true;
-                                   
-                                    break;
-                                     }
+                                    if (Convert.ToInt32(zabol) == Convert.ToInt32(zabolekari.SelectedValue))
+                                    {
+                                        a = true;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        a = false;
+                                    }
+                                }
                                 else
                                 {
                                     a = false;
@@ -267,14 +277,21 @@ namespace Acka
                             string[] odd = od.Split(' ');
                             string jod = lista[j].ToString();
                             aaa = listaDatum[j].ToString();
+                            zabol = listaZabol[j].ToString();
                             if (aaa == datum.Text)
                             {
 
                                 if (lista[j].ToString() == odd[0])
                                 {
-                                    a = true;
-
-                                    break;
+                                    if (Convert.ToInt32(zabol) == Convert.ToInt32(zabolekari.SelectedValue))
+                                    {
+                                        a = true;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        a = false;
+                                    }
                                 }
                                 else
                                 {

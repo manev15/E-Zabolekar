@@ -1,10 +1,92 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="zaprofil.aspx.cs" Inherits="Acka.zaprofil" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+ 
+      <style>
 
-    <br />
-    <br />
-    <asp:Label ID="Label1" runat="server" Text="Мора да бидете најавени"></asp:Label>
-    <br />
-    <br />
-    <asp:Button ID="Button1" runat="server" Text="Најава" OnClick="btn_click"/>
+        .modal  {
+            /*   display: block;*/
+            padding-right: 0px;
+            background-color: rgba(4, 4, 4, 0.8); 
+        }
+   
+        .modal-dialog {
+            top: 20%;
+            width: 100%;
+            position: absolute;
+        }
+        .modal-content {
+            border-radius: 0px;
+            border: none;
+            top: 40%;
+        }
+        .modal-body {
+            background-color: #0f8845;
+            color: white;
+        }
+               
+    </style>
+    <script>
+        function najdi() {
+
+            zamodal.click();
+
+
+        }
+    </script>
+
+
+ 
+
+    <div class="container">
+ 
+    
+    <div class="row">
+        <!-- Large modal -->
+<asp:button id="zamodal" type="button" data-toggle="modal" data-target=".bs-example-modal-lg"> </asp:button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    
+      <div class="modal-body">
+     
+      <H2>Не си најавен!</H2>
+      <h4>За да ги видете вашите лични податоци мора да сте најавени!</h4>
+      <asp:Button ID="btnnajava" class="btn btn-info"  runat="server" Text="Најава" OnClick="btn_click" />
+
+
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    
+    
+</div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
 </asp:Content>

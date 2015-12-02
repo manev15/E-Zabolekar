@@ -60,9 +60,9 @@
                 <img src="images/slika2.jpg" alt="Flower">
             </div>
 
-            <div class="item">
+            <%--<div class="item">
                 <img src="images/slika.jpg" alt="Flower">
-            </div>
+            </div>--%>
         </div>
 
         <!-- Left and right controls -->

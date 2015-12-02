@@ -52,6 +52,10 @@ namespace Acka
             string niza = daticka.ToString();
             string[] nizi = niza.Split(' ');
             string[] nizi2 = nizi[0].Split('/');
+            if (nizi2[1].Length == 1)
+            {
+                nizi2[1] = "0" + nizi2[1];
+            }
             string konecen = nizi2[1] + "-" + nizi2[0] + "-" + nizi2[2];
 
             SqlConnection konekcija = new SqlConnection();
@@ -143,7 +147,7 @@ namespace Acka
                 //Label6.Text = opiss;
              //   this.Page_Load(null, null);
              //   ViewState["dataset"] = ds;
-                string tt="<div class='panel panel-primary' style='width:500px'><div class='panel-heading'><h3 class=panel-title>Наслов: "+naslovv+"</h3></div><div class='panel-body'>Опис на прегледот:<br/>"+opiss+"</div></div>";
+                string tt = "<div class='panel panel-primary' style='width:500px;margin-left:5%;'><div class='panel-heading'><h3 class=panel-title>Наслов: " + naslovv + "</h3></div><div class='panel-body'>Опис на прегледот:<br/>" + opiss + "</div></div>";
                 zapregled.Controls.Add(new LiteralControl(tt));
                     
             }

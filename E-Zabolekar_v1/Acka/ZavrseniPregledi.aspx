@@ -71,7 +71,7 @@
                 <%-- <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
                 <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>--%>
             </div>
-            <button class="btn btn-info btn-sm" data-toggle="modal" style="margin-left: 2%" data-target="#complete ">Избери датум</button>
+            <button class="btn btn-primary btn-sm" data-toggle="modal" style="margin-left: 2%" data-target="#complete ">Избери датум</button>
             <div id="complete" class="modal fade" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -85,7 +85,7 @@
                         </div>
                         <div class="modal-footer">
 
-                            <button type="button" class="btn btn-primary">Затвори</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Затвори</button>
                         </div>
                     </div>
                 </div>

@@ -238,42 +238,42 @@
 
                                        
                                         <div class="form-group">
-                                            <asp:TextBox ID="txtUserName" class="form-control" placeholder="Username" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtUserName" class="form-control" placeholder="Корисничко име" runat="server" style="max-width:100%"></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                            <asp:TextBox ID="txtPassword" class="form-control" placeholder="Password" name="password" type="password" value="" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtPassword" class="form-control" placeholder="Лозинка" name="password" type="password" value="" runat="server" style="max-width:100%"></asp:TextBox>
                                         </div>
                                         <asp:CheckBox ID="isKorisnik" runat="server" Text="Корисник" />
-                                        <asp:Button ID="btnLogIn" runat="server" class="btn btn-lg btn-success btn-block" Text="Login" OnClick="btnLogIn_Click" />
+                                        <asp:Button ID="btnLogIn" runat="server" class="btn btn-lg btn-success btn-block" Text="Логирај се" OnClick="btnLogIn_Click" />
                                         <!--OnClick="btnLogIn_Click"-->
 
 
                                         <div style="padding-top: 20px" role="form">
                                             <hr class="colorgraph">
                                             <div class="form-group">
-                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="First Name" ID="txtFirstName" runat="server"></asp:TextBox>
+                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="Име" ID="txtFirstName" runat="server" style="max-width:100%"></asp:TextBox>
                                             </div>
                                             <div class="form-group">
-                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="Last Name" ID="txtLastName" runat="server"></asp:TextBox>
+                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="Презиме" ID="txtLastName" runat="server" style="max-width:100%"></asp:TextBox>
                                             </div>
                                             <div class="form-group">
-                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="Username" ID="txtUsernam" runat="server"></asp:TextBox>
+                                                <asp:TextBox TabIndex="1" class="form-control" placeholder="Корисничко име" ID="txtUsernam" runat="server" style="max-width:100%"></asp:TextBox>
                                             </div>
                                             <div class="form-group">
-                                                <asp:TextBox type="password" value="" TabIndex="1" class="form-control" placeholder="Password" ID="txtPasswordd" runat="server"></asp:TextBox>
+                                                <asp:TextBox type="password" value="" TabIndex="1" class="form-control" placeholder="Лозинка" ID="txtPasswordd" runat="server" style="max-width:100%"></asp:TextBox>
                                             </div>
 
                                             <div class="form-group">
-                                                <asp:TextBox ID="txtTelefone"  TabIndex="2" class="form-control" placeholder="Telefone" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtTelefone"  TabIndex="2" class="form-control" placeholder="Телефон" runat="server" style="max-width:100%"></asp:TextBox>
                                             </div>
                                             <div class="form-group">
-                                                <asp:TextBox TabIndex="3" ID="txtLocation" class="form-control" placeholder="Location" runat="server"></asp:TextBox>
+                                                <asp:TextBox TabIndex="3" ID="txtLocation" class="form-control" placeholder="Адреса" runat="server" style="max-width:100%"></asp:TextBox>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-sm-6 col-sm-offset-3">
-                                                        <asp:Button Style="display: block;" runat="server" ID="RegisterSubmit" class="form-control btn btn-register" Text="Register Now" Font-Bold="True" OnClick="btnRegister_Click" />
+                                                        <asp:Button Style="display: block;" runat="server" ID="RegisterSubmit" class="form-control btn btn-register" Text="Регистрација" Font-Bold="True" OnClick="btnRegister_Click" />
                                                         <!-- OnClick="RegisterSubmit_Click" /> -->
 
                                                     </div>

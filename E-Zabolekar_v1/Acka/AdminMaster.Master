@@ -103,7 +103,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> -E-Zabolekar za Admin</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Е-Заболекар</p>
             </footer>
         </div>
     </form>

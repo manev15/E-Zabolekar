@@ -260,7 +260,7 @@ namespace Acka
                         int odsega = Convert.ToInt32(DateTime.Now.Month);
 
                         int odbaza = Convert.ToInt32(da[1]);
-                        if (Math.Abs(odsega) - Math.Abs(odbaza) > 1)
+                        if (Math.Abs(odsega) - Math.Abs(odbaza) >= 1)
                         {
                             zaza2 = row["datum"].ToString();
                             zaza = row["naslov"].ToString();
@@ -366,7 +366,7 @@ namespace Acka
                         int odsega = Convert.ToInt32(DateTime.Now.Month);
 
                         int odbaza = Convert.ToInt32(da[1]);
-                        if (Math.Abs(odsega) - Math.Abs(odbaza) >1)
+                        if (Math.Abs(odsega) - Math.Abs(odbaza) >=1)
                         {
                             br3++;
                         }
