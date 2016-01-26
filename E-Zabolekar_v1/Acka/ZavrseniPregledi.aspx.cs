@@ -52,9 +52,9 @@ namespace Acka
             string niza = daticka.ToString();
             string[] nizi = niza.Split(' ');
             string[] nizi2 = nizi[0].Split('/');
-            if (nizi2[1].Length == 1)
+            if (nizi2[0].Length == 1)
             {
-                nizi2[1] = "0" + nizi2[1];
+                nizi2[0] = "0" + nizi2[0];
             }
             string konecen = nizi2[1] + "-" + nizi2[0] + "-" + nizi2[2];
 
