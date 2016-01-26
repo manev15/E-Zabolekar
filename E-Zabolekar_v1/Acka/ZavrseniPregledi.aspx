@@ -34,9 +34,6 @@
             document.getElementById('<%=Hidden3.ClientID %>').value = label3.innerHTML;
 
 
-        <%--    document.getElementById("<%= Button1.ClientID %>").click();
-      document.getElementById("<%= Button2.ClientID %>").click();   --%>
-
             var pageId = "<%=  Page.ClientID %>";
             __doPostBack(pageId, gotovid);
 

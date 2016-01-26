@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Мој профил" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MojProfil.aspx.cs" Inherits="Acka.MojProfil" %>
+﻿<%@ Page Title="Мој профил" Language="C#" EnableEventValidation="false" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MojProfil.aspx.cs" Inherits="Acka.MojProfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script>
@@ -89,7 +89,7 @@
             $(".counted").charCounter(320, { container: "#counter" });
         });
 
-        </script>
+    </script>
 
 
     <style>
@@ -224,7 +224,7 @@
                                             <asp:PlaceHolder ID="AccountInformation" runat="server"></asp:PlaceHolder>
 
                                         </div>
-                                        <div id="settings" class="tab-pane"   style="margin-left: 9%;">
+                                        <div id="settings" class="tab-pane" style="margin-left: 9%;">
                                             <h4>Опции:</h4>
                                             <asp:Button class="btn btn-primary" data-toggle="modal" data-target="#complete-fak" runat="server" Text="Промени корисничко име"></asp:Button>
                                             </br>
@@ -247,10 +247,10 @@
                                                         <div class="panel panel-default">
                                                             <div class="panel-body">
                                                                 <form accept-charset="UTF-8">
-                                                                      <asp:TextBox TabIndex="1" Style="max-width: 100%;" placeholder="Наслов" class="form-control"   ID="naslov" runat="server"></asp:TextBox>
-                                                                    <br/>
-                                                                    
-                                                                        <textarea class="form-control counted" name="message" placeholder="Вашата порака" rows="5" style="margin-bottom: 10px;"></textarea>
+                                                                    <asp:TextBox TabIndex="1" Style="max-width: 100%;" placeholder="Наслов" class="form-control" ID="naslov" runat="server"></asp:TextBox>
+                                                                    <br />
+
+                                                                    <textarea class="form-control counted" name="message" placeholder="Вашата порака" rows="5" style="margin-bottom: 10px;"></textarea>
                                                                     <h6 class="pull-right" id="counter">320 преостанати букви</h6>
                                                                     <button class="btn btn-primary" type="submit">Испрати ја пораката</button>
                                                                 </form>

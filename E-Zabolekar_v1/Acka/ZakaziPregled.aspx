@@ -81,9 +81,9 @@
                     </tr>
                     <tr>
                         <td>
-                            </br>
+                            <br/>
                             <asp:Label ID="Label2" runat="server" Text="Избери термин:"></asp:Label>
-                            </br>
+                            <br/>
                             <asp:RadioButtonList ID="termini" runat="server" style="margin-left:45%">
                                 <asp:ListItem>08:00 - 09:00</asp:ListItem>
                                 <asp:ListItem>09:00 - 10:00</asp:ListItem>
@@ -94,15 +94,7 @@
                                 <asp:ListItem>14:00 - 15:00</asp:ListItem>
                                 <asp:ListItem>15:00 - 16:00</asp:ListItem>
                             </asp:RadioButtonList>
-                          
-                              <%--  <div class="list-group" >
-                                    <button type="button" class="list-group-item" style="margin-left:45%">08:00 - 09:00</button>
-                                    <button type="button" class="list-group-item" style="margin-left:45%">08:00 - 09:00</button>
-                                    <button type="button" class="list-group-item" style="margin-left:45%">08:00 - 09:00</button>
-                                    <button type="button" class="list-group-item" style="margin-left:45%">08:00 - 09:00</button>
-                                    <button type="button" class="list-group-item" style="margin-left:45%">08:00 - 09:00</button>
-                             
-                            </div>--%>
+                      
                         </td>
                     </tr>
                     <tr>

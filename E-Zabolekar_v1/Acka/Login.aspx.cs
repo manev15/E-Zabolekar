@@ -130,7 +130,7 @@ namespace Acka
                         }
                         else
                         {
-                            Response.Redirect("Defaultadmin.aspx");
+                            Response.Redirect("MoiTerminiAdmin.aspx");
                         }
 
                     }
@@ -204,7 +204,7 @@ namespace Acka
 
                         if (admin == 1)
                         {
-                            Response.Redirect("Defaultadmin.aspx");
+                            Response.Redirect("MoiTerminiAdmin.aspx");
                         }
 
 

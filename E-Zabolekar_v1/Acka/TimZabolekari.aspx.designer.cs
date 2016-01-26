@@ -10,7 +10,7 @@
 namespace Acka {
     
     
-    public partial class About {
+    public partial class TimZabolekari {
         
         /// <summary>
         /// dodadiZabolekari control.
@@ -20,5 +20,14 @@ namespace Acka {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder dodadiZabolekari;
+        
+        /// <summary>
+        /// gvZabolekari control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvZabolekari;
     }
 }
