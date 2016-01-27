@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"  EnableEventValidation="false" AutoEventWireup="true" CodeBehind="PorakiKorisnik.aspx.cs" Inherits="Acka.PorakiKorisnik" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PorakiKorisnik.aspx.cs" Inherits="Acka.PorakiKorisnik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-      <script>
+    <script>
+
         (function ($) {
             /**
              * attaches a character counter to each textarea element in the jQuery object
@@ -100,292 +101,232 @@
 
         </script>
     <style>
-
         @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
 
-body {
-    background-color:#F7F7F7;
-    font-family: 'Open Sans', sans-serif;
-}
-/*Navbar*/
-.navbar-default {
-    background-color:#fff;
-    border-bottom-color:#E3E3E3;
-}
-.navbar-default .navbar-nav>.active>a, 
-.navbar-default .navbar-nav>.active>a:hover, 
-.navbar-default .navbar-nav>.active>a:focus{
-    background-color:transparent!important;
-}
-.navbar-default .btn-compose {
-    padding-right:10px;
-    border-right:1px solid #F0F0F0;
-}
-/*Forms setup*/
-.form-control {
-    border-radius:0;
-    box-shadow:none;
-    height:auto;
-    width:100%;
-}
-.float-label{
-    font-size:10px;
-}
-input[type="text"].form-control,
-input[type="search"].form-control{
-    border:none;
-    border-bottom:1px dotted #CFCFCF;
-}
-textarea {
-    border:1px dotted #CFCFCF!important;
-    height:130px!important;
-}
-/*Content Container*/
-.content-container {
-    background-color:#fff;
-    padding:35px 20px;
-    margin-bottom:20px;
-}
-h1.content-title{
-    font-size:32px;
-    font-weight:300;
-    text-align:center;
-    margin-top:0;
-    margin-bottom:20px;
-    font-family: 'Open Sans', sans-serif!important;
-}
-/*Compose*/
-.btn-send{
-    text-align:center;
-    margin-top:20px;
-}
-/*mail list*/
+        body {
+            background-color: #F7F7F7;
+            font-family: 'Open Sans', sans-serif;
+        }
+        /*Navbar*/
+        .navbar-default {
+            background-color: #fff;
+            border-bottom-color: #E3E3E3;
+        }
 
-ul.mail-list{
-    padding:0;
-    margin:0;
-    list-style:none;
-    margin-top:30px;
-}
-ul.mail-list li a{
-    display:block;
-    border-bottom:1px dotted #CFCFCF;
-    padding:20px;
-    text-decoration:none;
-}
-ul.mail-list li:last-child a{
-    border-bottom:none;
-}
-ul.mail-list li a:hover{
-    background-color:#DBF9FF;
-}
-ul.mail-list li span{
-    display:block;
-}
-ul.mail-list li span.mail-sender{
-    font-weight:600;
-    color:#8F8F8F;
-}
-ul.mail-list li span.mail-subject{
-    color:#8C8C8C;
-}
-ul.mail-list li span.mail-message-preview{
-    display:block;
-    color:#A8A8A8;
-}
-.mail-search{
-    border-bottom-color:#7FBCC9!important; 
-}
+            .navbar-default .navbar-nav > .active > a,
+            .navbar-default .navbar-nav > .active > a:hover,
+            .navbar-default .navbar-nav > .active > a:focus {
+                background-color: transparent !important;
+            }
 
+            .navbar-default .btn-compose {
+                padding-right: 10px;
+                border-right: 1px solid #F0F0F0;
+            }
+        /*Forms setup*/
+        .form-control {
+            border-radius: 0;
+            box-shadow: none;
+            height: auto;
+            width: 100%;
+        }
+
+        .float-label {
+            font-size: 10px;
+        }
+
+        input[type="text"].form-control,
+        input[type="search"].form-control {
+            border: none;
+            border-bottom: 1px dotted #CFCFCF;
+        }
+
+        textarea {
+            border: 1px dotted #CFCFCF !important;
+            height: 130px !important;
+        }
+        /*Content Container*/
+        .content-container {
+            background-color: #fff;
+            padding: 35px 20px;
+            margin-bottom: 20px;
+        }
+
+        h1.content-title {
+            font-size: 32px;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-family: 'Open Sans', sans-serif !important;
+        }
+        /*Compose*/
+        .btn-send {
+            text-align: center;
+            margin-top: 20px;
+        }
+        /*mail list*/
+
+        ul.mail-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            margin-top: 30px;
+        }
+
+            ul.mail-list li a {
+                display: block;
+                border-bottom: 1px dotted #CFCFCF;
+                padding: 20px;
+                text-decoration: none;
+            }
+
+            ul.mail-list li:last-child a {
+                border-bottom: none;
+            }
+
+            ul.mail-list li a:hover {
+                background-color: #DBF9FF;
+            }
+
+            ul.mail-list li span {
+                display: block;
+            }
+
+                ul.mail-list li span.mail-sender {
+                    font-weight: 600;
+                    color: #8F8F8F;
+                }
+
+                ul.mail-list li span.mail-subject {
+                    color: #8C8C8C;
+                }
+
+                ul.mail-list li span.mail-message-preview {
+                    display: block;
+                    color: #A8A8A8;
+                }
+
+        .mail-search {
+            border-bottom-color: #7FBCC9 !important;
+        }
     </style>
 
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-top:2%">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-top: 2%">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
 
-            </button>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="btn-compose pull-left">
-                <a type="button" class="btn btn-danger navbar-btn" href="#compose" role="tab" data-toggle="tab"> <span class="glyphicon glyphicon-pencil"></span> Состави порака</a>
+                </button>
             </div>
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#inbox" role="tab" data-toggle="tab">
-                        Примени пораки <span class="label label-success">10</span>
-                    </a>
-                </li>
-                <li><a href="#sent-mail" role="tab" data-toggle="tab">Испратени пораки</a>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="btn-compose pull-left">
+                    <a type="button" class="btn btn-danger navbar-btn" href="#" role="tab" data-toggle="modal" data-target="#complete-fak"><span class="glyphicon glyphicon-pencil"></span>Состави порака</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#inbox" role="tab" data-toggle="tab">Примени пораки <span class="label label-success">10</span>
+                        </a>
+                    </li>
+                    <li><a href="#prateni" role="tab" data-toggle="tab">Испратени пораки</a>
 
-                </li>
-                
-            </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+
+
+    <div class="tab-content">
+        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+        <div class="tab-pane active" id="inbox">
+
+            <div class="container">
+                <div class="content-container clearfix">
+                    <div class="col-md-12">
+                        <h1 class="content-title">Примени пораки</h1>
+
+
+
+                        <ul class="mail-list">
+                            <asp:PlaceHolder ID="placePrimeni" runat="server"></asp:PlaceHolder>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="tab-pane" id="prateni">
+
+            <div class="container">
+                <div class="content-container clearfix">
+                    <div class="col-md-12">
+                        <h1 class="content-title">Пратени пораки</h1>
+
+
+
+                        <ul class="mail-list">
+                            <asp:PlaceHolder ID="placePrateni" runat="server"></asp:PlaceHolder>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <div id="complete-fak" class="modal fade" tabindex="-1">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Состави порака</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 5%">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <asp:Label ID="Label1" runat="server" Text="Избери заболекар: "></asp:Label>
+                            <asp:DropDownList ID="listaZabolekari" runat="server"></asp:DropDownList>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Наслов" runat="server" id="naslovPoraka" style="max-width: 100%" />
+                        </div>
+                        <textarea class="form-control" runat="server" id="opisPoraka" placeholder="Содржина..."></textarea>
+                     
+                             <asp:Button ID="btn1" class="btn btn-primary" runat="server" Text="Прати порака" OnClick="btn1_Click" UseSubmitBehavior="false" data-dismiss="modal"  />   
          
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+                    </div>
 
-
-
-
-<div class="tab-content">
-    <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-  <div class="tab-pane active" id="inbox">
-      
-      <div class="container">
-           <div class="content-container clearfix">
-               <div class="col-md-12">
-                   <h1 class="content-title">Примени пораки</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
                    
-              
-                   
-                   <ul class="mail-list">
-                       <li>
-                            <a href="#citajporaka" role="tab" data-toggle="tab">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                           </a>
-                       </li>
-                       <li>
-                          
-                              <a href="#citajporaka" role="tab" data-toggle="tab">
-                                <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="#citajporaka" role="tab" data-toggle="tab">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="#citajporaka" role="tab" data-toggle="tab">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="#citajporaka" role="tab" data-toggle="tab">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                   </ul>
-               </div>
-           </div>
-       </div>
-      
-  </div>
-  <div class="tab-pane" id="compose">
-      
-      <div class="container">
-    <div class="content-container clearfix">
-        <h1 class="content-title">Состави порака</h1>
-        <div class="col-md-12">
-            <div class="form-group">
-                <asp:Label ID="Label1" runat="server" Text="Избери заболекар: "></asp:Label>     <asp:DropDownList ID="listaZabolekari" runat="server"></asp:DropDownList>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Наслов" runat="server" id="naslovPoraka" style="max-width:100%"/>
-            </div>
-            <textarea class="form-control" runat="server" id="opisPoraka" placeholder="Содржина..."></textarea>
-            <div class="btn-send">
+                </div>
 
-                <asp:Button ID="btnIsprati" class="btn btn-success btn-lg"  runat="server" Text="Испрати" OnClick="ispratiPoraka"/>
             </div>
         </div>
+
     </div>
-</div>
-      
-  </div>
-  <div class="tab-pane" id="sent-mail">
-      
-      <div class="container">
-           <div class="content-container clearfix">
-               <div class="col-md-12">
-                   <h1 class="content-title">Испратени пораки</h1>
-                   
-                   <input type="search" placeholder="Search Mail" class="form-control mail-search" />
-                   
-                   <ul class="mail-list">
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">You have ten more subscriptions click her...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                       <li>
-                           <a href="">
-                               <span class="mail-sender">You Tube</span>
-                               <span class="mail-subject">New subscribers!</span>
-                               <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
-                           </a>
-                       </li>
-                   </ul>
-               </div>
-           </div>
-       </div>
-      
-  </div>
- 
-    <div class="tab-pane" id="citajporaka">
-      
-      <div class="container">
-           <div class="content-container clearfix">
-               <div class="col-md-12">
-                   <h1 class="content-title">Porakataaaaaaaaaa</h1>
-                   
-                  
-                   
-                   <ul class="mail-list">
-                          
 
 
-
-
-                   </ul>
-               </div>
-           </div>
-       </div>
-      
-  </div>
-</div>
-
-   
 </asp:Content>

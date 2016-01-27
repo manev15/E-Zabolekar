@@ -147,7 +147,7 @@ namespace Acka
                 //Label6.Text = opiss;
              //   this.Page_Load(null, null);
              //   ViewState["dataset"] = ds;
-                string tt = "<div class='panel panel-primary' style='width:500px;margin-left:5%;'><div class='panel-heading'><h3 class=panel-title>Наслов: " + naslovv + "</h3></div><div class='panel-body'>Опис на прегледот:<br/>" + opiss + "</div></div>";
+                string tt = "<div class='panel panel-primary' style='width:500px;margin-left:5%;'><div class='panel-heading'><h3 class=panel-title>Наслов: " + naslovv + "</h3></div><div class='panel-body'>Опис на прегледот:<br/><p>" + opiss + "</p></div></div>";
                 zapregled.Controls.Add(new LiteralControl(tt));
                     
             }

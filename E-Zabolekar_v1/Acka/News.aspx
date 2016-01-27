@@ -11,7 +11,7 @@
          
                <div class="span8">
     <h3><%# Eval("naslov") %></h3>
-    <p><%# Eval("opis") %><%# Eval("opis") %><%# Eval("opis") %><%# Eval("opis") %><%# Eval("opis") %><%# Eval("opis") %></p>
+    <p><%# Eval("opis") %></p>
     <div>
         <span class="badge badge-success">Датум: <%# Eval("datum") %></span>
     </div> 

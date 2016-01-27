@@ -634,7 +634,7 @@
     <Content Include="Scripts\material.min.js" />
     <Content Include="Scripts\ripples.js" />
     <Content Include="Scripts\ripples.min.js" />
-    <Content Include="TimZabolekari.aspx" />
+    <Content Include="Uredi.aspx" />
     <Content Include="ZakazeniTermini.aspx" />
     <Content Include="ZakaziPregled.aspx" />
     <Content Include="AdminMaster.Master" />
@@ -1223,12 +1223,12 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="TimZabolekari.aspx.cs">
-      <DependentUpon>TimZabolekari.aspx</DependentUpon>
+    <Compile Include="Uredi.aspx.cs">
+      <DependentUpon>Uredi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TimZabolekari.aspx.designer.cs">
-      <DependentUpon>TimZabolekari.aspx</DependentUpon>
+    <Compile Include="Uredi.aspx.designer.cs">
+      <DependentUpon>Uredi.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

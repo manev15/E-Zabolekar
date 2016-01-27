@@ -22,6 +22,24 @@ namespace Acka {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
+        /// placePrimeni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder placePrimeni;
+        
+        /// <summary>
+        /// placePrateni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder placePrateni;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -58,12 +76,12 @@ namespace Acka {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea opisPoraka;
         
         /// <summary>
-        /// btnIsprati control.
+        /// btn1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIsprati;
+        protected global::System.Web.UI.WebControls.Button btn1;
     }
 }

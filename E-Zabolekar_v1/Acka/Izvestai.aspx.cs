@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,6 +14,9 @@ namespace Acka
     public partial class Izvestai : System.Web.UI.Page
     {
         private int br1 = 0, br2 = 0, br3 = 0;
+        SqlConnection konekcija = new SqlConnection(WebConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString);
+        SqlCommand komanda;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["korisnik"] == null)
@@ -22,7 +26,8 @@ namespace Acka
             if (!IsPostBack)
             {
                 ispolniBrojki();
-                
+                ispolni();
+
             }
             zasite.ServerClick += new EventHandler(a1_ServerClick);
             zanovi.ServerClick += new EventHandler(a2_ServerClick);
@@ -58,9 +63,9 @@ namespace Acka
 
                         zaza = row["naslov"].ToString();
                         zaza1 = row["opispregled"].ToString();
-                      
 
-                        html = html + "<div class='list-group'><div class='list-group-item'><div class='row-action-primary'> <i class='fa fa-book'></i></div><div class='row-content'><div class='action-secondary'><i class='mdi-material-info'></i></div><div class='least-content'>"+zaza2+"</div><h4 class='list-group-item-heading'>" + zaza + "</h4><p class='list-group-item-text'>" + zaza1 + "</p></div> </div><div class='list-group-separator'></div>";
+
+                        html = html + "<div class='list-group'><div class='list-group-item'><div class='row-action-primary'> <i class='fa fa-book'></i></div><div class='row-content'><div class='action-secondary'><i class='mdi-material-info'></i></div><div class='least-content'>" + zaza2 + "</div><h4 class='list-group-item-heading'>" + zaza + "</h4><p class='list-group-item-text'>" + zaza1 + "</p></div> </div><div class='list-group-separator'></div>";
                     }
                 }
 
@@ -125,7 +130,7 @@ namespace Acka
                                 zaza1 = row["opispregled"].ToString();
 
                                 html = html + "<div class='list-group'><div class='list-group-item'><div class='row-action-primary'> <i class='fa fa-book'></i></div><div class='row-content'><div class='action-secondary'><i class='mdi-material-info'></i></div><div class='least-content'>" + zaza2 + "</div><h4 class='list-group-item-heading'>" + zaza + "</h4><p class='list-group-item-text'>" + zaza1 + "</p></div> </div><div class='list-group-separator'></div>";
-                
+
                             }
                             else
                             {
@@ -136,8 +141,8 @@ namespace Acka
                         { }
                     }
                 }
-          
-            
+
+
                 pan.Visible = false;
                 pan1.Visible = true;
                 pan2.Visible = false;
@@ -200,7 +205,7 @@ namespace Acka
                             zaza1 = row["opispregled"].ToString();
 
                             html = html + "<div class='list-group'><div class='list-group-item'><div class='row-action-primary'> <i class='fa fa-book'></i></div><div class='row-content'><div class='action-secondary'><i class='mdi-material-info'></i></div><div class='least-content'>" + zaza2 + "</div><h4 class='list-group-item-heading'>" + zaza + "</h4><p class='list-group-item-text'>" + zaza1 + "</p></div> </div><div class='list-group-separator'></div>";
-                
+
                         }
                         else
                         {
@@ -209,7 +214,7 @@ namespace Acka
                     }
                 }
 
-                
+
                 pan.Visible = false;
                 pan1.Visible = false;
                 pan2.Visible = true;
@@ -260,20 +265,33 @@ namespace Acka
                         int odsega = Convert.ToInt32(DateTime.Now.Month);
 
                         int odbaza = Convert.ToInt32(da[1]);
-                        if (Math.Abs(odsega) - Math.Abs(odbaza) >= 1)
+
+                        int god = Convert.ToInt32(da[2]);
+                        if (god < 2016)
                         {
                             zaza2 = row["datum"].ToString();
                             zaza = row["naslov"].ToString();
                             zaza1 = row["opispregled"].ToString();
 
                             html = html + "<div class='list-group'><div class='list-group-item'><div class='row-action-primary'> <i class='fa fa-book'></i></div><div class='row-content'><div class='action-secondary'><i class='mdi-material-info'></i></div><div class='least-content'>" + zaza2 + "</div><h4 class='list-group-item-heading'>" + zaza + "</h4><p class='list-group-item-text'>" + zaza1 + "</p></div> </div><div class='list-group-separator'></div>";
-                
+
+                        }
+
+
+                        if (Math.Abs(odsega) - Math.Abs(odbaza) > 1)
+                        {
+                            zaza2 = row["datum"].ToString();
+                            zaza = row["naslov"].ToString();
+                            zaza1 = row["opispregled"].ToString();
+
+                            html = html + "<div class='list-group'><div class='list-group-item'><div class='row-action-primary'> <i class='fa fa-book'></i></div><div class='row-content'><div class='action-secondary'><i class='mdi-material-info'></i></div><div class='least-content'>" + zaza2 + "</div><h4 class='list-group-item-heading'>" + zaza + "</h4><p class='list-group-item-text'>" + zaza1 + "</p></div> </div><div class='list-group-separator'></div>";
+
                         }
                         else
                         {
 
                         }
-                        
+
                     }
                 }
 
@@ -361,12 +379,18 @@ namespace Acka
                     foreach (DataRow row in table.Rows)
                     {
 
-                        za= row["datum"].ToString();
+                        za = row["datum"].ToString();
                         string[] da = za.Split('-');
                         int odsega = Convert.ToInt32(DateTime.Now.Month);
 
                         int odbaza = Convert.ToInt32(da[1]);
-                        if (Math.Abs(odsega) - Math.Abs(odbaza) >=1)
+                        int god=Convert.ToInt32(da[2]);
+                        if (god < 2016)
+                        {
+                            br3++;
+                        }
+
+                        if (Math.Abs(odsega) - Math.Abs(odbaza) > 1)
                         {
                             br3++;
                         }
@@ -381,7 +405,7 @@ namespace Acka
 
 
                 int br = Convert.ToInt32(ds.Tables[0].Rows[0]["broj1"].ToString());
-               
+
                 string zaz = "";
                 foreach (DataTable table in ds1.Tables)
                 {
@@ -391,22 +415,22 @@ namespace Acka
                         zaz = row["datum"].ToString();
                         string[] da = zaz.Split('-');
                         int odsega = Convert.ToInt32(DateTime.Now.Day);
-                         int mesec = Convert.ToInt32(DateTime.Now.Month);
+                        int mesec = Convert.ToInt32(DateTime.Now.Month);
                         int odbaza = Convert.ToInt32(da[0]);
-                           int odbazaMesec = Convert.ToInt32(da[1]);
-                           if (mesec - odbazaMesec == 0)
-                           {
-                               if (Math.Abs(odsega) - Math.Abs(odbaza) <= 7)
-                               {
-                                   br1++;
-                               }
-                               else
-                               {
+                        int odbazaMesec = Convert.ToInt32(da[1]);
+                        if (mesec - odbazaMesec == 0)
+                        {
+                            if (Math.Abs(odsega) - Math.Abs(odbaza) <= 7)
+                            {
+                                br1++;
+                            }
+                            else
+                            {
 
-                               }
-                           }
-                           else
-                           { }
+                            }
+                        }
+                        else
+                        { }
                     }
                 }
 
@@ -435,7 +459,140 @@ namespace Acka
 
 
 
-        
+
+        }
+        private void ispolni()
+        {
+            konekcija = new SqlConnection();
+            konekcija.ConnectionString = ConfigurationManager.ConnectionStrings["mojaKonekcija"].ConnectionString;
+            string sqlString = "SELECT * FROM Termin";
+            komanda = new SqlCommand(sqlString, konekcija);
+            SqlDataAdapter adapter = new SqlDataAdapter(komanda);
+            DataSet ds = new DataSet();
+
+            try
+            {
+                konekcija.Open();
+                adapter.Fill(ds, "Korisnici");
+                gvZabolekari.DataSource = ds;
+                gvZabolekari.DataBind();
+                //    lblPoraka.Text = ds.Tables[0].Rows[0]["broj"].ToString();
+                ViewState["dataset"] = ds;
+            }
+            catch (Exception err)
+            {
+
+            }
+            finally
+            {
+                konekcija.Close();
+            }
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            //DataSet ds = (DataSet)ViewState["dataset"];
+
+            gvZabolekari.EditIndex = e.NewEditIndex;
+            //GridView1.DataSource = ds;
+            // GridView1.DataBind();
+            ispolni();
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            // DataSet ds = (DataSet)ViewState["dataset"];
+            gvZabolekari.EditIndex = -1;
+            // GridView1.DataSource = ds;
+            // GridView1.DataBind();
+            ispolni();
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+
+            int index = e.RowIndex;
+
+
+            GridViewRow row = (GridViewRow)gvZabolekari.Rows[index];
+            Label eid = (Label)row.FindControl("lblTermin");
+            TextBox txtime = (TextBox)row.FindControl("txtKorisnik");
+            TextBox txtopis = (TextBox)row.FindControl("txtZabolekar");
+            TextBox txttelefon = (TextBox)row.FindControl("txtOd");
+            TextBox txtuser = (TextBox)row.FindControl("txtDo");
+            TextBox txtlokacija = (TextBox)row.FindControl("txtDatum");
+
+            //    komanda.commandtext = "update korisnik set lokacija='" + novo + "' where user_name='" + korisnik + "'";
+            SqlCommand cmd2 = new SqlCommand("update termin set korisnik_id = '" + txtime.Text + "',zabolekar_id='" + txtopis.Text + "',od='" + txttelefon.Text + "',do='" + txtuser.Text + "',datum='" + txtlokacija.Text + "' where termin_id='" + Convert.ToInt32(eid.Text) + "'", konekcija);
+            konekcija.Open();
+            int res1 = cmd2.ExecuteNonQuery();
+            konekcija.Close();
+
+
+            gvZabolekari.EditIndex = -1;
+
+            ispolni();
+
+
+
+            /*TextBox tb = (TextBox)GridView1.Rows[e.RowIndex].Cells[0].Controls[0];
+            komanda.Parameters.AddWithValue("@ime_prezime", tb.Text);
+             */
+            // komanda.Parameters.AddWithValue("@korisnik_ID",);
+
+            int efekt = 0;
+            try
+            {
+                konekcija.Open();
+                efekt = komanda.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+
+            }
+            finally
+            {
+                konekcija.Close();
+                gvZabolekari.EditIndex = -1;
+            }
+
+            ispolni();
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void gv1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvZabolekari.EditIndex = -1;
+
+            ispolni();
+        }
+        protected void gv1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int index = e.RowIndex;
+
+            GridViewRow row = (GridViewRow)gvZabolekari.Rows[index];
+
+            Label eid = (Label)row.FindControl("lblTermin");
+
+            SqlCommand cmd = new SqlCommand("delete from termin where termin_id=" + Convert.ToInt32(eid.Text) + "", konekcija);
+            konekcija.Open();
+            int res = cmd.ExecuteNonQuery();
+            konekcija.Close();
+
+
+
+            ispolni();
+        }
+        protected void gv1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvZabolekari.PageIndex = e.NewPageIndex;
+
+            ispolni();
         }
     }
 }

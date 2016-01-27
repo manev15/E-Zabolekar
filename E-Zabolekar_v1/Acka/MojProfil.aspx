@@ -206,7 +206,7 @@
                                             <span class="glyphicon glyphicon-cog"></span>
                                         </a>
                                     </li>
-                                    <li>
+                                   <%-- <li>
                                         <a data-toggle="tab" href="#email">
                                             <span class="glyphicon glyphicon-envelope"></span>
                                         </a>
@@ -215,7 +215,7 @@
                                         <a data-toggle="tab" href="#events">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </a>
-                                    </li>
+                                    </li>--%>
                                 </ul>
                                 <div class="user-body">
                                     <div class="tab-content">
@@ -238,7 +238,7 @@
                                             <asp:Button class="btn btn-primary" data-toggle="modal" data-target="#complete-fak4" Style="width: 87%" runat="server" Text="Промени слика"></asp:Button>
 
                                         </div>
-                                        <div id="email" class="tab-pane">
+                                     <%--   <div id="email" class="tab-pane">
                                             <h4>Испрати порака:</h4>
 
                                             <div class="container">
@@ -263,7 +263,7 @@
                                         </div>
                                         <div id="events" class="tab-pane">
                                             <h4>Events</h4>
-                                        </div>
+                                        </div>--%>
 
                                     </div>
                                 </div>

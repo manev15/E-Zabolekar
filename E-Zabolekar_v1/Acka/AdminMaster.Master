@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Е-Заболекар</title>
-
+    
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -42,10 +42,10 @@
                 <li id="" ><a  href="MoiTerminiAdmin.aspx"><span class="glyphicon glyphicon-list-alt"></span> Мои термини</a></li>
                 <li><a href="ZavrseniPregledi.aspx"><span class="glyphicon glyphicon-th-list"></span> Завршени прегледи</a></li> 	
                 <li><a href="Izvestai.aspx"><span class="glyphicon glyphicon-print"></span> Извештаи</a></li>
-                <li><a href="Anketi.aspx"><span class="glyphicon glyphicon-pencil"></span> Анкети</a></li>
+               <%-- <li><a href="Anketi.aspx"><span class="glyphicon glyphicon-pencil"></span> Анкети</a></li>--%>
                 <li><a href="DodadiNovost.aspx"><span class="glyphicon glyphicon-align-justify"><span/> Новости</a></li>
                  <li><a href="PorakiZabolekar.aspx"><span class="glyphicon glyphicon-envelope"></span> Пораки</a></li>
-                 <li><a href="Timzabolekari.aspx"><span class="glyphicon glyphicon-user"></span> Тим</a></li>
+                 <li><a href="Uredi.aspx"><span class="glyphicon glyphicon-plus"></span> Уреди</a></li>
                
             </ul>
           <%--  <ul class="nav navbar-nav navbar-right">

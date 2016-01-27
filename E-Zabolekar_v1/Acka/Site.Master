@@ -44,9 +44,9 @@
                          <li><a href="ZakazeniTermini.aspx">  <span class="glyphicon glyphicon-list-alt"></span> Закажени термини</a></li>
                         <li><a href="News.aspx"><span class="glyphicon glyphicon-th-list"></span> Новости</a></li>
                         <li><a href="About.aspx"><span class=" 	glyphicon glyphicon-search"></span> Заболекари</a></li>
-                       
-                        <li><a href="Mojprofil.aspx"><span class="glyphicon glyphicon-user"></span> Мој профил</a></li>
                           <li><a href="PorakiKorisnik.aspx"><span class="glyphicon glyphicon-envelope"></span> Пораки</a></li>
+                        <li><a href="Mojprofil.aspx"><span class="glyphicon glyphicon-user"></span> Мој профил</a></li>
+                       
 
                     </ul>
                     <%--  <ul class="nav navbar-nav navbar-right">
